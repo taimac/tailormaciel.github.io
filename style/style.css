@@ -68,7 +68,7 @@ a.button:hover{
     left: 0;
     width: 100vw !important;
     height: 30px;
-    padding: 20px;
+    padding: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -78,10 +78,11 @@ a.button:hover{
 }
 
 .logo img, .logo p {
-    margin-top: 100px;
+    margin-top: 150px;
 	padding: 25px 0 0 5px;
-    width: 25%;
-   	border-radius: 100%;
+    width: 120px;
+    height: 180px;
+    border-radius: 50%;
   
 }
 
@@ -210,19 +211,25 @@ a.button:hover{
     font-size: 2.6em;
     text-align: center;
     padding-top: 10px;
+   
 }
 
 /* Text inside of the article section on Integration,Knowledge and Measurement page  */
 .main-text{
     padding-left:  10px;
-    padding-right: 20px;
+    padding-right: 10px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6em;
     color:#333d3d;
-    font-size: 1.5em;
-    text-align:center;
+    font-size: 1.2em;
+    text-align:justify;
     width: 60%;
+    
+}
+
+.main-content{
+    background-color:rgb(243,239,224);
 }
 
 .introduction{
@@ -676,10 +683,7 @@ p.heading{
 
 
 @media screen and (max-width: 940px) {
-    .main-text{
-        display: none;
-    }
-    
+      
     .navbar ul {
         display: none;
         
