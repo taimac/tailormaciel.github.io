@@ -38,6 +38,7 @@ pytest-cov==4.1.0               # Test coverage reporting
 pytest-flask==1.2.0             # Flask-specific testing utilities
 faker==19.6.2                   # Generate fake data for testing
 factory-boy==3.3.0              # Test fixtures and factory pattern
+packaging==23.2                 # Version parsing for environment validation scripts
 
 # ============================================================================
 # CODE QUALITY & DEVELOPMENT TOOLS
