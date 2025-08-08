@@ -42,7 +42,7 @@ def check(command, min_version=None):
         - Only runs safe, read-only commands.
     """
     try:
-        result = subprocess.run(command, shell=True, capture_output=True, text=True)
+        result = subprocess.run(shlex.split(command), capture_output=True, text=True)
         output = result.stdout.strip() or result.stderr.strip()
         print(f"{command}: {output}")
         if min_version:
