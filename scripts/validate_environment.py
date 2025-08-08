@@ -60,7 +60,7 @@ def main():
     checks = [
         check("python3 --version", "3.8"),
         check("git --version", "2.30"),
-        check("code --version", "1.50"),
+        check("code --version", os.environ.get("VSCODE_MIN_VERSION", "1.80")),
         check("which pip"),
     ]
     if all(checks):
