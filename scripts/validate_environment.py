@@ -23,7 +23,7 @@ def parse_version(output):
     Extracts the version number from a command output string.
     """
     for token in output.split():
-        if token[0].isdigit():
+        if token and token[0].isdigit():
             return token
     return None
 
