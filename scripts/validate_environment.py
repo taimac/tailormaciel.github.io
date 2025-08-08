@@ -61,7 +61,7 @@ def main():
         check("python3 --version", "3.8"),
         check("git --version", "2.30"),
         check("code --version", os.environ.get("VSCODE_MIN_VERSION", "1.80")),
-        check("which pip"),
+        check("python -m pip --version"),
     ]
     if all(checks):
         print("✅ Environment is ready!")
