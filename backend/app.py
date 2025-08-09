@@ -20,7 +20,15 @@ def create_app(config_name='development'):
     app = Flask(__name__)
 
     # Load configuration
-    app.config.from_object(f'config.{config_name.title()}Config')
+    # Load configuration using a validated mapping
+    config_mapping = {
+        'development': 'config.DevelopmentConfig',
+        'production': 'config.ProductionConfig'
+    }
+    config_class = config_mapping.get(config_name.lower())
+    if not config_class:
+        raise ValueError(f"Invalid config_name '{config_name}'. Allowed values are: {list(config_mapping.keys())}")
+    app.config.from_object(config_class)
 
     # Register blueprints here (add as you implement features)
     # from controllers import auth_bp, content_bp
