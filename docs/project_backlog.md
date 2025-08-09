@@ -203,6 +203,22 @@ personal-website/
 - [ ] Add README.md files explaining each folder
 - [ ] Create .gitignore with appropriate patterns
 
+**My Development Notes**:
+- **Reviewed Clean Architecture and project documentation.**
+- **Planned folder structure to map directly to Clean Architecture layers:**
+    - `frontend/` (Presentation/UI)
+    - `backend/controllers/` (Presentation)
+    - `backend/services/` (Application)
+    - `backend/models/` (Domain)
+    - `backend/repositories/` (Infrastructure)
+    - `backend/middleware/` (Cross-cutting concerns)
+    - `backend/tests/` (Testing)
+    - `docs/` (Documentation)
+    - `scripts/` (Dev utilities)
+- **Each folder will include a README.md explaining its purpose for learning.**
+- **Will add placeholder files and .gitignore as per requirements.**
+- **Next step:** Scaffold folders and add documentation for each, following Clean Architecture and educational best practices.
+
 ---
 
 ### Issue #3: Backend Dependencies & Flask Application Bootstrap
