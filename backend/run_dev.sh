@@ -5,7 +5,7 @@
 source .venv/bin/activate
 
 # Export environment variables for development
-export FLASK_ENV=development
+export FLASK_DEBUG=1
 export FLASK_APP=app.py
 
 # Optional: load secrets from .env if using python-dotenv
