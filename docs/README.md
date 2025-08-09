@@ -250,7 +250,7 @@ python -m flake8 . --max-line-length=88
 - All public methods must have corresponding tests
 - Error handling paths must be tested
 
-## # Documentation
+## Documentation
 
 Project documentation, architectural decisions, and learning records.
 
