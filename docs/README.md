@@ -250,17 +250,16 @@ python -m flake8 . --max-line-length=88
 - All public methods must have corresponding tests
 - Error handling paths must be tested
 
-## 📚 Documentation
+## Documentation
 
-### For Developers
-- `docs/Daily_Development_Routine.md` - Complete development workflow
-- `docs/OOP_ARCHITECTURE_GUIDE.md` - Architectural patterns and decisions
-- `docs/SETUP.md` - Development environment setup guide
+Project documentation, architectural decisions, and learning records.
 
-### For Learning
-- Code comments explain OOP principles and security considerations
-- Commit messages document architectural decisions
-- `docs/learning_progress.md` tracks educational milestones
+- **ADR**: Architectural Decision Records
+- **Setup guides**: Environment and workflow
+- **Backlog**: Project planning and progress
+
+**Learning:**  
+Highlights the importance of documentation-driven development and knowledge sharing.
 
 ## 🤝 Contributing
 
