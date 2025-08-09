@@ -1,7 +1,11 @@
 import os
 
 class BaseConfig:
-    SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-secret-key')
+import secrets
+import os
+
+class BaseConfig:
+    SECRET_KEY = os.environ.get('SECRET_KEY') or secrets.token_urlsafe(32)
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', 'sqlite:///development.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
