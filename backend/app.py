@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+from backend import config as cfg
 
 def create_app(config_name='development'):
     """
@@ -18,17 +19,9 @@ def create_app(config_name='development'):
         - Supports dependency injection for blueprints/extensions.
     """
     app = Flask(__name__)
-
-    # Load configuration
-    # Load configuration using a validated mapping
-    config_mapping = {
-        'development': 'config.DevelopmentConfig',
-        'production': 'config.ProductionConfig'
-    }
-    config_class = config_mapping.get(config_name.lower())
-    if not config_class:
-        raise ValueError(f"Invalid config_name '{config_name}'. Allowed values are: {list(config_mapping.keys())}")
+    config_class = cfg.get_config_class(config_name)
     app.config.from_object(config_class)
+    cfg.apply_runtime_env(app)
 
     # Register blueprints here (add as you implement features)
     # from controllers import auth_bp, content_bp
@@ -52,5 +45,5 @@ def create_app(config_name='development'):
     return app
 
 if __name__ == '__main__':
-    app = create_app()
+    app = create_app('development')
     app.run(debug=True)

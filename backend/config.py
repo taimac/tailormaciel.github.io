@@ -1,12 +1,7 @@
 import os
-
-class BaseConfig:
 import secrets
-import os
 
 class BaseConfig:
-    SECRET_KEY = os.environ.get('SECRET_KEY') or secrets.token_urlsafe(32)
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', 'sqlite:///development.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class DevelopmentConfig(BaseConfig):
@@ -14,6 +9,34 @@ class DevelopmentConfig(BaseConfig):
 
 class ProductionConfig(BaseConfig):
     DEBUG = False
-    # Add production-specific settings here (e.g., secure cookies)
 
-    
+def runtime_settings():
+    """
+    Returns environment-aware settings evaluated at runtime.
+
+    Security:
+        - Generates a strong random SECRET_KEY only if not provided.
+    Architecture:
+        - Defers env access to runtime (improves testability).
+    """
+    return {
+        "SECRET_KEY": os.environ.get("SECRET_KEY", secrets.token_urlsafe(32)),
+        "SQLALCHEMY_DATABASE_URI": os.environ.get("DATABASE_URL", "sqlite:///development.db"),
+    }
+
+def get_config_class(name: str):
+    mapping = {
+        "development": DevelopmentConfig,
+        "production": ProductionConfig,
+    }
+    return mapping.get(name, DevelopmentConfig)
+
+def apply_runtime_env(app):
+    """
+    Applies runtime (env-based) settings onto the Flask app config.
+
+    Clean Architecture:
+        - Separation between static config class and dynamic env overlay.
+    """
+    app.config.update(runtime_settings())
+

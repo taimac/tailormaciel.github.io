@@ -105,53 +105,197 @@ code --version    # VSCode command line tools
 
 **Philosophy**: Learn the fundamentals first. Docker abstracts away core concepts we want to understand deeply.
 
-#### Backend Setup - Step by Step
+#### Backend Setup — Step by Step (Clean Architecture & Security-First)
 
-1. **Create isolated environment**:
-   ```bash
-   cd personal-website/backend
-   python -m venv venv
-   
-   # Activation (choose your OS)
-   source venv/bin/activate        # Linux/Mac
-   venv\Scripts\activate          # Windows
-   ```
+> **Why this matters:**  
+> Isolating your backend environment teaches encapsulation (OOP), prevents dependency conflicts, and supports Clean Architecture by keeping backend logic and dependencies separate from the frontend. This also enforces security best practices by reducing the risk of leaking secrets or mixing environments.
 
-2. **Install dependencies with explanation**:
-   ```bash
-   pip install -r requirements.txt
-   
-   # Key dependencies and why:
-   # Flask: Minimal web framework (learn HTTP concepts)
-   # SQLAlchemy: ORM for database abstraction
-   # PyJWT: JSON Web Token authentication
-   # Werkzeug: Password hashing and security utilities
-   # pytest: Testing framework
-   # black: Code formatting
-   # pylint: Code quality checking
-   ```
+---
 
-3. **Database initialization**:
-   ```bash
-   # Initialize database with sample data
-   python init_db.py
-   
-   # This demonstrates:
-   # - Database schema creation
-   # - Migration concepts
-   # - Sample data seeding
-   ```
+**1. Navigate to the backend directory**
 
-4. **Run with development features**:
-   ```bash
-   # Development mode with auto-reload and debugging
-   export FLASK_ENV=development
-   export FLASK_DEBUG=1
-   python app.py
-   
-   # Backend available at: http://127.0.0.1:5000
-   # API documentation: http://127.0.0.1:5000/api/docs
-   ```
+```bash
+cd backend
+```
+- *Why?*  
+  All backend code, dependencies, and environment files should live here. This separation supports modularity and maintainability.
+
+---
+
+**2. Create a Python virtual environment (recommended: `.venv` for hidden, editor-friendly setup)**
+
+```bash
+python3 -m venv .venv
+```
+- *Why `.venv`?*  
+  - The leading dot hides the folder on Unix-like systems, reducing workspace clutter.
+  - Many editors (like VS Code) auto-detect `.venv` for Python interpreter settings.
+  - Prevents accidental commits—`.venv/` is typically in `.gitignore`.
+
+---
+
+**3. Activate the virtual environment**
+
+- On Linux/macOS:
+  ```bash
+  source .venv/bin/activate
+  ```
+- On Windows:
+  ```cmd
+  .venv\Scripts\activate
+  ```
+
+- *Why?*  
+  Activating the environment ensures all Python packages are installed locally, not globally, supporting the principle of least privilege and preventing dependency conflicts.
+
+---
+
+**4. Install backend dependencies**
+
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+- *Why?*  
+  - `requirements.txt` is pinned for reproducibility and security.
+  - Only backend dependencies are installed, keeping the environment clean.
+
+---
+
+**5. Verify your environment**
+
+```bash
+python -m flask --version
+```
+- *Why?*  
+  Confirms Flask (and other dependencies) are installed in your isolated environment.
+
+---
+
+**6. Add `.venv/` to your `.gitignore` (if not already present)**
+
+```gitignore
+# In your .gitignore (root or backend/.gitignore)
+backend/.venv/
+```
+- *Why?*  
+  Prevents accidental commits of your virtual environment, which can contain OS-specific binaries and sensitive data.
+
+---
+
+**7. Environment Variables & Security**
+
+- Create a `.env` file in `backend/` for secrets and config:
+  ```
+  # backend/.env
+  SECRET_KEY=your-dev-secret-key
+  DATABASE_URL=sqlite:///development.db
+  JWT_SECRET_KEY=your-jwt-secret
+  FLASK_ENV=development
+  ```
+- *Why?*  
+  Never hardcode secrets in code. Use environment variables for sensitive data, following security-first development.
+
+---
+
+**8. Common Troubleshooting**
+
+- **Error:** `source .venv/bin/activate: No such file or directory`
+  - *Solution:* Make sure you are in the `backend/` directory and have run `python3 -m venv .venv`.
+- **Error:** `ModuleNotFoundError`
+  - *Solution:* Ensure your virtual environment is activated and dependencies are installed.
+
+---
+
+**Learning Validation Questions:**
+- Why do we isolate backend and frontend environments?
+- What could go wrong if you install dependencies globally?
+- How does this setup support Clean Architecture and security?
+
+---
+
+**Summary Table**
+
+| Step | Command | Why? |
+|------|---------|------|
+| 1 | `cd backend` | Separation of concerns |
+| 2 | `python3 -m venv .venv` | Encapsulation, modularity |
+| 3 | `source .venv/bin/activate` | Environment isolation |
+| 4 | `pip install -r requirements.txt` | Reproducibility, security |
+| 5 | `python -m flask --version` | Verification |
+| 6 | `.gitignore: backend/.venv/` | Prevent accidental commits |
+| 7 | `.env` file | Secure config management |
+
+---
+
+> **Remember:**  
+> This setup is foundational for Clean Architecture, OOP, and security-first development. Every step is designed to teach a core software engineering concept that will be built upon in subsequent phases.
+
+#### Backend Development Server Startup Script
+
+> **Why this matters:**  
+> Automating the backend startup process ensures every contributor runs the server with the correct environment, supporting Clean Architecture, security, and a smooth onboarding experience. This script encapsulates environment activation, configuration, and safe development practices.
+
+---
+
+**1. Create the startup script**
+
+In your `backend/` directory, create a file named `run_dev.sh`:
+
+```bash
+#!/bin/bash
+# backend/run_dev.sh
+
+# Activate the backend virtual environment
+source .venv/bin/activate
+
+# Set environment variables for development
+export FLASK_ENV=development
+export FLASK_APP=app.py
+
+# (Optional) Load secrets from .env if using python-dotenv
+# export $(grep -v '^#' .env | xargs)
+
+# Start the Flask development server
+python app.py
+```
+
+**2. Make the script executable**
+
+```bash
+chmod +x run_dev.sh
+```
+
+**3. Run the backend development server**
+
+```bash
+cd backend
+./run_dev.sh
+```
+
+- This will:
+  - Activate your isolated Python environment (encapsulation, security)
+  - Set development-specific environment variables (separation of concerns)
+  - Start the Flask server with the correct configuration (Clean Architecture)
+
+---
+
+**Security Notes:**
+- Never use this script for production—debug mode and dev secrets are only safe for local development.
+- Ensure `.venv/` and `.env` are in your `.gitignore` to prevent accidental commits.
+
+---
+
+**Learning Validation Questions:**
+- Why is it important to automate environment activation and configuration?
+- What could go wrong if you run the server without the correct environment variables?
+- How does this script support Clean Architecture and security-first development?
+
+---
+
+> **Remember:**  
+> This script is a practical example of encapsulation and automation, reducing human error and supporting a professional, maintainable workflow.
+
 
 #### Frontend Setup - Progressive Enhancement
 
@@ -527,3 +671,5 @@ Before proceeding to advanced features, ensure you can answer:
 ---
 
 **Remember**: This isn't just about building a website—it's about mastering Object-Oriented Programming, Clean Architecture, and Security principles through hands-on practice. Every component is designed to teach fundamental software engineering concepts that apply far beyond web development.
+
+---
