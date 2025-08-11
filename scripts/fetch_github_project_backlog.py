@@ -5,7 +5,7 @@ Simple version for learning
 """
 import argparse
 import requests
-import os, sys
+import os
 from datetime import datetime
 
 

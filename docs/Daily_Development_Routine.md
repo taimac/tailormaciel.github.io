@@ -52,6 +52,8 @@ pip list
 - **Consistency**: Same environment every time
 - **Learning**: Understand dependency management
 
+---
+
 ### **2. Project Status Check**
 
 #### **Update from Remote Repository**
@@ -79,6 +81,8 @@ git branch -a  # See all branches
 # Review your backlog
 cat docs/backlog.md | head -20  # See current priorities
 ```
+
+---
 
 ### **3. Development Environment Validation**
 
@@ -157,6 +161,8 @@ git push -u origin feature/issue-5-add-user-authentication
 - `bugfix/issue-N-description` - Bug fixes
 - `refactor/component-name` - Code improvements
 - `docs/update-setup-guide` - Documentation updates
+
+---
 
 ### **5. Test-Driven Development Cycle**
 
@@ -243,7 +249,53 @@ python -m pytest tests/test_user_authentication.py -v
 python -m pytest tests/ -v
 ```
 
-### **6. Code Quality & Documentation**
+---
+
+### **6. Code Quality, Automation & Documentation**
+
+#### **Automated Code Quality Enforcement (Pre-commit Hook)**
+
+**Why Use a Pre-commit Hook?**
+- **Automation**: Ensures every commit meets code quality standards automatically.
+- **Security**: Prevents accidental inclusion of risky or low-quality code.
+- **Professional Workflow**: Mirrors industry practices and reinforces clean code habits.
+
+**How It Works:**
+A pre-commit hook is installed at `.git/hooks/pre-commit` and runs automatically before every commit.  
+It performs the following actions:
+1. **Removes unused imports and variables** (`autoflake`)
+2. **Auto-formats code** (`autopep8` or `black`)
+3. **Removes trailing whitespace** (via `sed`)
+4. **Runs linting checks** (`flake8`)
+5. **Blocks the commit if any issues remain**
+
+**Required Tools:**
+```bash
+pip install autoflake autopep8 flake8
+# or, if using black:
+pip install black
+```
+
+**Testing the Pre-commit Hook:**
+1. Make a code style error (e.g., add an unused import or trailing whitespace).
+2. Try to commit:
+    ```bash
+    git add .
+    git commit -m "test: check pre-commit hook"
+    ```
+3. Observe:
+   - If issues exist, the commit is blocked and errors are shown.
+   - If all checks pass, the commit proceeds.
+
+**Troubleshooting:**
+- If your commit is blocked, read the error messages and fix the issues.
+- If the hook does not run, ensure it is executable:
+    ```bash
+    chmod +x .git/hooks/pre-commit
+    ```
+- For advanced configuration, see `.flake8` and the pre-commit script.
+
+---
 
 #### **Add Comprehensive Documentation**
 ```python
@@ -307,6 +359,8 @@ class AuthService:
         # Implementation here...
 ```
 
+---
+
 #### **Manual Code Review Checklist**
 ```bash
 # Before committing, manually check:
@@ -339,6 +393,8 @@ echo "- Are controllers thin (only HTTP handling)?"
 echo "- Are dependencies pointing inward?"
 echo "- Is the code testable?"
 ```
+
+---
 
 ### **7. Commit & Documentation Process**
 
@@ -435,15 +491,14 @@ python -m pytest tests/ --cov=backend --cov-report=term-missing
 
 #### **Code Quality Check**
 ```bash
-# Check for style issues
+# Manual checks are now automated by the pre-commit hook!
+# You can still run these manually if needed:
 python -m flake8 backend/ --count --statistics
-
-# Check for potential bugs
 python -m pylint backend/ --score=y
-
-# Format code consistently
 python -m black backend/
 ```
+
+---
 
 ### **9. Learning Reflection**
 
@@ -659,4 +714,13 @@ python -m pytest tests/ --cov=backend --cov-report=term-missing | tail -1 >> wee
 
 ---
 
-This routine builds professional development habits while keeping focus on learning core programming principles. Adjust timing and steps based on your schedule, but maintain the overall structure for consistency and growth.
+## 🛠️ Pre-commit Hook Reference
+
+```bash
+# .git/hooks/pre-commit (must be executable)
+autoflake --in-place --remove-unused-variables --remove-all-unused-imports -r backend scripts
+autopep8 --in-place --recursive backend scripts
+# black backend scripts
+find backend scripts -name "*.py" -exec sed -i 's/[ \t]*$//' {} +
+flake8 backend scripts
+```
