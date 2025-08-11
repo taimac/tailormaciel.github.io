@@ -1,14 +1,18 @@
 import os
 import secrets
 
+
 class BaseConfig:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+
 
 class DevelopmentConfig(BaseConfig):
     DEBUG = True
 
+
 class ProductionConfig(BaseConfig):
     DEBUG = False
+
 
 def runtime_settings():
     """
@@ -21,8 +25,11 @@ def runtime_settings():
     """
     return {
         "SECRET_KEY": os.environ.get("SECRET_KEY", secrets.token_urlsafe(32)),
-        "SQLALCHEMY_DATABASE_URI": os.environ.get("DATABASE_URL", "sqlite:///development.db"),
+        "SQLALCHEMY_DATABASE_URI": os.environ.get(
+            "DATABASE_URL", "sqlite:///development.db"
+        ),
     }
+
 
 def get_config_class(name: str):
     mapping = {
@@ -30,6 +37,7 @@ def get_config_class(name: str):
         "production": ProductionConfig,
     }
     return mapping.get(name, DevelopmentConfig)
+
 
 def apply_runtime_env(app):
     """
@@ -39,4 +47,3 @@ def apply_runtime_env(app):
         - Separation between static config class and dynamic env overlay.
     """
     app.config.update(runtime_settings())
-

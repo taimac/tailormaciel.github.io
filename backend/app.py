@@ -1,7 +1,8 @@
 from flask import Flask, jsonify
 from backend import config as cfg
 
-def create_app(config_name='development'):
+
+def create_app(config_name="development"):
     """
     Application factory for creating Flask app instances.
 
@@ -29,7 +30,7 @@ def create_app(config_name='development'):
     # app.register_blueprint(content_bp)
 
     # Health check endpoint
-    @app.route('/health', methods=['GET'])
+    @app.route("/health", methods=["GET"])
     def health():
         """
         Basic health check endpoint.
@@ -44,6 +45,7 @@ def create_app(config_name='development'):
 
     return app
 
-if __name__ == '__main__':
-    app = create_app('development')
+
+if __name__ == "__main__":
+    app = create_app("development")
     app.run(debug=True)
