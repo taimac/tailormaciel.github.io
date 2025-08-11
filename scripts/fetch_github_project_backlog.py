@@ -5,7 +5,7 @@ Simple version for learning
 """
 import argparse
 import requests
-import os
+import os, decimal 
 from datetime import datetime
 
 
