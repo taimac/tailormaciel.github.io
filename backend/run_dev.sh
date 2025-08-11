@@ -2,7 +2,14 @@
 # filepath: backend/run_dev.sh
 
 # Activate virtual environment
-source .venv/bin/activate
+if [ -f ".venv/bin/activate" ]; then
+    source .venv/bin/activate
+elif [ -f "venv/bin/activate" ]; then
+    source venv/bin/activate
+else
+    echo "Error: No virtual environment found in .venv or venv."
+    exit 1
+fi
 
 # Export environment variables for development
 export FLASK_DEBUG=1
