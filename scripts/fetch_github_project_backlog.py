@@ -5,7 +5,7 @@ Simple version for learning
 """
 import argparse
 import requests
-import os, decimal 
+import os, sys
 from datetime import datetime
 
 
@@ -63,8 +63,8 @@ class SimpleIssuesExporter:
         # Build markdown content
         content = f"""# 📋 Development Backlog
 
-**Repository**: [{self.repo}](https://github.com/{self.repo})  
-**Last Updated**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}  
+**Repository**: [{self.repo}](https://github.com/{self.repo})
+**Last Updated**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 **Total Issues**: {len(actual_issues)} | **Open**: {len(open_issues)} | **Closed**: {len(closed_issues)}
 
 ---
@@ -110,7 +110,7 @@ class SimpleIssuesExporter:
 
         return f"""### {status_emoji} Issue #{number}: {title}
 
-**Status**: {state.upper()}{labels_str}  
+**Status**: {state.upper()}{labels_str}
 **GitHub**: [{html_url}]({html_url})
 
 **Description**:
