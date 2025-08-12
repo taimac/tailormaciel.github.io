@@ -14,9 +14,12 @@ Clean Code:
     Defensive programming - robust version checks.
 """
 
+import os
+import shlex
 import sys
 import subprocess
 from packaging import version  # Requires 'pip install packaging'
+
 
 def parse_version(output):
     """
@@ -26,6 +29,7 @@ def parse_version(output):
         if token and token[0].isdigit():
             return token
     return None
+
 
 def check(command, min_version=None):
     """
@@ -47,13 +51,16 @@ def check(command, min_version=None):
         print(f"{command}: {output}")
         if min_version:
             found_version = parse_version(output)
-            if not found_version or version.parse(found_version) < version.parse(min_version):
+            if not found_version or version.parse(found_version) < version.parse(
+                min_version
+            ):
                 print(f"❌ {command} version must be >= {min_version}")
                 return False
         return True
     except Exception as e:
         print(f"❌ {command} failed: {e}")
         return False
+
 
 def main():
     print("== Environment Validation ==")
@@ -69,6 +76,7 @@ def main():
     else:
         print("❌ Environment setup incomplete.")
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()
