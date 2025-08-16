@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tailor Maciel's Educational Background - Computer Science Diploma, Management Degree, and Professional Certifications from Google, HarvardX, and Microsoft.">
+    <meta name="keywords" content="Computer Science education, Google certifications, HarvardX, Microsoft Azure, data science, professional development">
+    <meta name="author" content="Tailor Maciel">
+    <title>Education & Certifications - Tailor Maciel</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Professional Blue-Tech Color Scheme - Matching index.html */
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #3b82f6;
+            --secondary: #1e40af;
+            --accent: #06d6a0;
+            --accent-hover: #059669;
+            
+            /* Text Colors */
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --text-muted: #9ca3af;
+            --text-white: #ffffff;
+            
+            /* Background Colors */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-accent: #eff6ff;
+            --bg-dark: #1f2937;
+            
+            /* Border & Shadow */
+            --border-light: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            
+            /* Gradients */
+            --gradient-hero: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            --gradient-accent: linear-gradient(135deg, var(--accent) 0%, #10b981 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+        }
+
+        /* Navigation - Matching index.html */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover {
+            color: var(--primary-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .kb-login {
+            background: var(--primary) !important;
+            color: white !important;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .kb-login:hover {
+            background: var(--primary-dark) !important;
+            transform: translateY(-1px);
+        }
+
+        .kb-login::after {
+            display: none;
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-top: 70px;
+            padding: 4rem 2rem 2rem;
+            background: var(--gradient-hero);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5" opacity="0.15"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            margin-top: 2rem;
+            opacity: 0.8;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            margin-right: 0.5rem;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        /* Academic Education */
+        .academic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .academic-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 4px solid var(--primary);
+        }
+
+        .academic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .academic-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .academic-logo {
+            width: 60px;
+            height: 60px;
+            background: var(--bg-accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .academic-info h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .academic-institution {
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .academic-details {
+            margin-bottom: 1rem;
+        }
+
+        .academic-date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .academic-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .academic-highlights {
+            list-style: none;
+        }
+
+        .academic-highlights li {
+            color: var(--text-secondary);
+            margin-bottom: 0.3rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .academic-highlights li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Professional Certifications */
+        .certifications-container {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .cert-provider {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .cert-provider:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .provider-header {
+            padding: 1.5rem 2rem;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .provider-logo {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .provider-logo img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+        }
+
+        .provider-info h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .provider-count {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .cert-list {
+            padding: 1.5rem 2rem;
+        }
+
+        .cert-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-light);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 1rem;
+            align-items: start;
+        }
+
+        .cert-item:last-child {
+            border-bottom: none;
+        }
+
+        .cert-info h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .cert-date {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .cert-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: flex-end;
+        }
+
+        .cert-badge {
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .verify-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .verify-link:hover {
+            color: var(--primary-dark);
+            gap: 0.5rem;
+        }
+
+        /* Skills Mapping */
+        .skills-map {
+            background: var(--bg-secondary);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skills-map h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: white;
+            color: var(--text-secondary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-family: 'JetBrains Mono', monospace;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        /* Continuous Learning */
+        .learning-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .learning-timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-light);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateX(5px);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--border-light);
+        }
+
+        .timeline-status {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .status-completed {
+            background: var(--accent);
+            color: white;
+        }
+
+        .status-current {
+            background: #fbbf24;
+            color: white;
+        }
+
+        .status-planned {
+            background: var(--bg-accent);
+            color: var(--primary);
+        }
+
+        .timeline-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .page-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .main-content {
+                padding: 2rem 1rem;
+            }
+
+            .academic-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cert-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .cert-actions {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .learning-timeline {
+                padding-left: 1rem;
+            }
+
+            .learning-timeline::before {
+                left: 8px;
+            }
+
+            .timeline-item::before {
+                left: -20px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">TM</a>
+            
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="education.html" class="active">Education</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="knowledge-base.html" class="kb-login">KB</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="header-content">
+            <h1 class="page-title">Education & Certifications</h1>
+            <p class="page-subtitle">
+                A systematic journey from business foundations to technical expertise, 
+                demonstrating commitment to continuous learning and professional growth.
+            </p>
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a> / Education & Certifications
+            </nav>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        
+        <!-- Academic Education Section -->
+        <section class="section">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-university"></i>
+                </div>
+                Academic Education
+            </h2>
+            <p class="section-description">
+                Formal education providing foundational knowledge in computer science and business management,
+                establishing the theoretical framework for practical application.
+            </p>
+
+            <div class="academic-grid">
+                <div class="academic-card">
+                    <div class="academic-header">
+                        <div class="academic-logo">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="academic-info">
+                            <h3>Diploma of Higher Education in Computer Science</h3>
+                            <div class="academic-institution">University of London</div>
+                        </div>
+                    </div>
+                    <div class="academic-details">
+                        <div class="academic-date">2019 - 2025</div>
+                        <p class="academic-description">
+                            Comprehensive computer science education covering fundamental algorithms, 
+                            data structures, software engineering principles, database systems, 
+                            web development, and system architecture.
+                            This qualification represents the successful completion of 240 credits from 
+                            the University of London’s BSc Computer Science program (Levels 4 and 5), 
+                            delivered online through Coursera and directed by Goldsmiths, University of London.<br><br>
+    					</p>
+                        <ul class="academic-highlights">
+                            <li>Object-Oriented Programming & Design Patterns</li>
+                            <li>Database Design & Management Systems</li>
+                            <li>Web Development & Modern Frameworks</li>
+                            <li>Software Engineering & Version Control</li>
+                            <li>Algorithms & Data Structures</li>
+                            <li>System Architecture & Design</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="academic-card">
+                    <div class="academic-header">
+                        <div class="academic-logo">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="academic-info">
+                            <h3>Tecnólogo em Processos Gerenciais</h3>
+                            <div class="academic-institution">Uniftec Group</div>
+                        </div>
+                    </div>
+                    <div class="academic-details">
+                        <div class="academic-date">2012 - 2016</div>
+                        <p class="academic-description">
+                            Associate degree in Management Processes focusing on manufacturing operations, 
+                            project management, quality control, and systematic business process optimization.
+                        </p>
+                        <ul class="academic-highlights">
+                            <li>Manufacturing Process Management</li>
+                            <li>Project Management Methodologies</li>
+                            <li>Quality Control & Assurance</li>
+                            <li>Business Process Optimization</li>
+                            <li>Operations Research & Analytics</li>
+                            <li>Leadership & Team Management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Certifications Section -->
+        <section class="section">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                Professional Certifications
+            </h2>
+            <p class="section-description">
+                Industry-recognized certifications validating technical competencies and specialized knowledge 
+                in data science, cloud computing, and modern development practices.
+            </p>
+
+            <div class="certifications-container">
+                <!-- HarvardX Certifications -->
+                <div class="cert-provider">
+                    <div class="provider-header">
+                        <div class="provider-logo">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23A41034'/%3E%3Ctext x='50' y='55' text-anchor='middle' fill='white' font-size='40' font-weight='bold' font-family='serif'%3EH%3C/text%3E%3C/svg%3E" alt="HarvardX">
+                        </div>
+                        <div class="provider-info">
+                            <h3>HarvardX Professional Education</h3>
+                            <div class="provider-count">5 Certifications</div>
+                        </div>
+                    </div>
+                    <div class="cert-list">
+                        <div class="cert-item">
+                            <div class="cert-info">
+                                <h4>Data Science: Inference and Modeling</h4>
+                                <div class="cert-date">Completed: June 2020</div>
+                                <p class="cert-description">
+                                    How to define estimates and margins of errors of populations, 
+                                    parameters, and standard errors in order to make predictions about data.
+                                    How to use models to aggregate data from different sources. 
+                                    How to apply the very basics of Bayesian statistics and predictive modeling. 
+                                </p>
+                            </div>
+                            <div class="cert-actions">
+                                <div class="cert-badge">Verified</div>
+                                <a href="#" class="verify-link">
+                                    View Certificate <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="cert-item">
+                            <div class="cert-info">
+                                <h4>Data Science: Productive Tools</h4>
+                                <div class="cert-date">Completed: June 2020</div>
+                                <p class="cert-description">
+                                    How to use Unix/Linux as a tool for managing files and directories and how to keep the file system organized. 
+                                    How to use the version control system git, a powerful tool for keeping track of changes in your scripts and reports.
+                                    How to write reports in R markdown which permits you to incorporate text and code into a document. 
+                                </p>
+                            </div>
+                            <div class="cert-actions">
+                                <div class="cert-badge">Verified</div>
+                                <a href="#" class="verify-link">
+                                    View Certificate <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="cert-item">
+                            <div class="cert-info">
+                                <h4>Data Science: R Basics</h4>
+                                <div class="cert-date">Completed: November 2021</div>
+                                <p class="cert-description">
+                                    How to read, extract, and create datasets in R. 
+                                    How to perform a variety of operations and analyses on datasets using R. 
+                                    How to write your own functions/sub-routines in R. 
+                                </p>
+                            </div>
+                            <div class="cert-actions">
+                                <div class="cert-badge">Verified</div>
+                                <a href="#" class="verify-link">
+                                    View Certificate <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="cert-item">
+                            <div class="cert-info">
+                                <h4>Data Science: Visualization</h4>
+                                <div class="cert-date">Completed: September 2021</div>
+                                <p class="cert-description">
+                                    Advanced data visualization techniques using ggplot2, creating compelling 
+                                    visual narratives, and developing interactive dashboards for business intelligence.
+                                </p>
+                            </div>
+                            <div class="cert-actions">
+                                <div class="cert-badge">Verified</div>
+                                <a href="#" class="verify-link">
+                                    View Certificate <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="cert-item">
+                            <div class="cert-info">
+                                <h4>Data Science: Probability and Statistics</h4>
+                                <div class="cert-date">Completed: July 2021</div>
+                                <p class="cert-description">
+                                    Statistical foundations for data science including probability theory, 
+                                    hypothesis testing, confidence intervals, and statistical inference.
+                                </p>
+                            </div>
+                            <div class="cert-actions">
+                                <div class="cert-badge">Verified</div>
+                                <a href="#" class="verify-link">
+                                    View Certificate <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-map">
+                        <h4>Skills Acquired:</h4>
+                        <div class="skills-tags">
+                            <span class="skill-tag">C Programming</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">ggplot2</span>
+                            <span class="skill-tag">Statistical Analysis</span>
+                            <span class="skill-tag">Data Visualization</span>
+                            <span class="skill-tag">Algorithms</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Microsoft Certifications -->
+                <div class="cert-provider">
+                    <div class="provider-header">
+                        <div class="provider-logo">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Microsoft">
+                        </div>
+                        <div class="provider-info">
+                            <h3>Microsoft Professional Certificates</h3>
+                            <div class="provider-count">7 Certifications</div>
+                        </div>
+                    </div>
+                    <div class="cert-list">
+                        <div class="cert-item">
+                            <div class="cert-info">
+                                <h4>Data Science: Essentials</h4>
+                                <div class="cert-date">Completed: April 2022</div>
+                                <p class="cert-description">
+                                    How to build predictive analytics solutions with Azure Machine Learning. 
+                                </p>
+                            </div>
+                            <div class="cert-actions">
+                                <div class="cert-badge">Verified</div>
+                                <a href="#" class="verify-link">
+                                    View Certificate <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="cert-item">
+                            <div class="cert-info">
+                                <h4>Data Science: Principles of Machine Learning</h4>
+                                <div class="cert-date">Completed: August 2022</div>
+                                <p class="cert-description">
+                                    Introduction to Classification, Loss Functions for Classification, 
+                                    Statistical Learning Theory for Supervised Learning, Logistic Regression, 
+                                    Maximum Likelihood Perspective, Evaluation Methods for Classifiers, 
+                                    ROC Curve Algorithm, Exploring Data for Classification, 
+                                    Multiple Linear Regression, Outliers, Improving Models, Regularization, 
+                                    Decision Trees, Boosting, Introduction to Neural Networks, Backpropagation, 
+                                    Support Vector Machines (SVMs), K-Means Clustering. 
+                                </p>
+                            </div>
+                            <div class="cert-actions">
+                                <div class="cert-badge">Verified</div>
+                                <a href="#" class="verify-link">
+                                    View Certificate <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="cert-item">
+                            <div class="cert-info">
+                                <h4>Data Science: Essential Statistics for Data Analysis</h4>
+                                <div class="cert-date">Completed: December 2022</div>
+                                <p class="cert-description">
+                                    Descriptive Statistics, Basic Probability, Random Variables, 
+                                    Sampling and Confidence Intervals, Hypothesis Testing.
+                                </p>
+                            </div>
+                            <div class="cert-actions">
+                                <div class="cert-badge">Verified</div>
+                                <a href="#" class="verify-link">
+                                    View Certificate <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-info">
+                                <h4>Data Science: Analyzing and Visualizing Data with Power BI</h4>
+                                <div class="cert-date">Completed: December 2022</div>
+                                <p class="cert-description">
+                                    Understanding key concepts in business intelligence, data analysis, and data visualization, 
+                                    Visualizing your data and authoring reports, Creating dashboards based on reports 
+                                    and natural language queries, Sharing dashboards effectively based on the 
+                                    organization’s needs, Connecting directly to SQL Azure, HD Spark, and SQL Server Analysis Services. 
+                                </p>
+                            </div>
+                            <div class="cert-actions">
+                                <div class="cert-badge">Verified</div>
+                                <a href="#" class="verify-link">
+                                    View Certificate <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-info">
+                                <h4>Data Science: Introduction to R for Data Science</h4>
+                                <div class="cert-date">Completed: December 2022</div>
+                                <p class="cert-description">
+                                    Vectors, Matrices, Factors, Lists, Data Frames, Basic Graphics. 
+                                </p>
+                            </div>
+                            <div class="cert-actions">
+                                <div class="cert-badge">Verified</div>
+                                <a href="#" class="verify-link">
+                                    View Certificate <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-info">
+                                <h4>Data Science: Querying with Transact-SQL</h4>
+                                <div class="cert-date">Completed: December 2022</div>
+                                <p class="cert-description">
+                                    Querying Tables with SELECT, Querying Multiple Tables with Joins, 
+                                    Using Set Operators, Using Functions and Aggregating Data,
+                                    Using Subqueries and APPLY, Using Table Expressions, 
+                                    Grouping Sets and Pivoting Data, Modifying Data, 
+                                    Programming with Transact-SQL, Error Handling and Transactions.
+                                </p>
+                            </div>
+                            <div class="cert-actions">
+                                <div class="cert-badge">Verified</div>
+                                <a href="#" class="verify-link">
+                                    View Certificate <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-info">
+                                <h4>Data Science Orientation</h4>
+                                <div class="cert-date">Completed: December 2022</div>
+                                <p class="cert-description">
+                                    An overview of The Data Science Curriculum, 
+                                    Data Science Fundamentals and Getting Started with Data. 
+                                </p>
+                            </div>
+                            <div class="cert-actions">
+                                <div class="cert-badge">Verified</div>
+                                <a href="#" class="verify-link">
+                                    View Certificate <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-map">
+                        <h4>Skills Acquired:</h4>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Azure Cloud</span>
+                            <span class="skill-tag">AI/ML Services</span>
+                            <span class="skill-tag">Power BI</span>
+                            <span class="skill-tag">Power Automate</span>
+                            <span class="skill-tag">Cloud Architecture</span>
+                            <span class="skill-tag">Business Intelligence</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Google Certifications -->
+                <div class="cert-provider">
+                    <div class="provider-header">
+                        <div class="provider-logo">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google">
+                        </div>
+                        <div class="provider-info">
+                            <h3>Google Professional Certificates</h3>
+                            <div class="provider-count">1 Certification</div>
+                        </div>
+                    </div>
+                    <div class="cert-list">
+                        <div class="cert-item">
+                            <div class="cert-info">
+                                <h4>Google IT Support Professional Certificate</h4>
+                                <div class="cert-date">Completed: August 2021</div>
+                                <p class="cert-description">
+                                    Technical foundation covering computer hardware, software, networking, 
+                                    operating systems, system administration, and security fundamentals.
+                                </p>
+                            </div>
+                            <div class="cert-actions">
+                                <div class="cert-badge">Verified</div>
+                                <a href="https://coursera.org/share/1782f12eb40bfa95cdd656651c6fe618" class="verify-link">
+                                    View Certificate <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+
+                    <div class="skills-map">
+                        <h4>Skills Acquired:</h4>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Operating Systems</span>
+                            <span class="skill-tag">Comp. Networking</span>
+                            <span class="skill-tag">IT Security</span>
+                            <span class="skill-tag">IT Infrastructure</span>
+                            <span class="skill-tag">Technical Support</span>
+                            <span class="skill-tag">System Administration</span>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <!-- Additional Certifications -->
+                <div class="cert-provider">
+                    <div class="provider-header">
+                        <div class="provider-logo">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="provider-info">
+                            <h3>Additional Professional Certifications</h3>
+                            <div class="provider-count">5+ Specialized Certifications</div>
+                        </div>
+                    </div>
+                    <div class="cert-list">
+                        <div class="cert-item">
+                            <div class="cert-info">
+                                <h4>Docker Fundamentals</h4>
+                                <div class="cert-date">Completed: February 2024</div>
+                                <p class="cert-description">
+                                    Container technology, Docker architecture, image creation, 
+                                    container orchestration, and deployment strategies.
+                                </p>
+                            </div>
+                            <div class="cert-actions">
+                                <div class="cert-badge">Verified</div>
+                                <a href="#" class="verify-link">
+                                    View Certificate <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="cert-item">
+                            <div class="cert-info">
+                                <h4>Git & Version Control Systems</h4>
+                                <div class="cert-date">Completed: October 2023</div>
+                                <p class="cert-description">
+                                    Advanced Git workflows, branching strategies, collaboration techniques, 
+                                    and DevOps integration practices.
+                                </p>
+                            </div>
+                            <div class="cert-actions">
+                                <div class="cert-badge">Verified</div>
+                                <a href="#" class="verify-link">
+                                    View Certificate <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="cert-item">
+                            <div class="cert-info">
+                                <h4>Agile Project Management</h4>
+                                <div class="cert-date">Completed: January 2023</div>
+                                <p class="cert-description">
+                                    Scrum methodology, sprint planning, user story creation, 
+                                    and agile team management principles.
+                                </p>
+                            </div>
+                            <div class="cert-actions">
+                                <div class="cert-badge">Verified</div>
+                                <a href="#" class="verify-link">
+                                    View Certificate <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-map">
+                        <h4>Skills Acquired:</h4>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">DevOps</span>
+                            <span class="skill-tag">Agile/Scrum</span>
+                            <span class="skill-tag">Project Management</span>
+                            <span class="skill-tag">CI/CD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Continuous Learning Section -->
+        <section class="section">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                Continuous Learning Journey
+            </h2>
+            <p class="section-description">
+                My commitment to staying current with evolving technologies and expanding expertise 
+                through ongoing education and practical application.
+            </p>
+
+            <div class="learning-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-status status-completed">Completed</div>
+                    <h4>Advanced React & Modern JavaScript</h4>
+                    <p>
+                        Deep dive into React ecosystem including hooks, context API, performance optimization, 
+                        and integration with modern development tools. Applied in current Sales Management System project.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-status status-current">In Progress</div>
+                    <h4>Django REST Framework Mastery</h4>
+                    <p>
+                        Advanced backend development with Django, API design patterns, authentication systems, 
+                        and database optimization. Currently implementing in production application.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-status status-current">In Progress</div>
+                    <h4>AWS Solutions Architecture</h4>
+                    <p>
+                        Preparing for AWS Solutions Architect certification to complement existing cloud knowledge 
+                        and enable scalable deployment strategies for enterprise applications.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-status status-planned">Planned - Q2 2025</div>
+                    <h4>Kubernetes & Container Orchestration</h4>
+                    <p>
+                        Expanding containerization expertise to include Kubernetes for large-scale application 
+                        deployment and management in production environments.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-status status-planned">Planned - Q3 2025</div>
+                    <h4>Advanced Machine Learning & AI</h4>
+                    <p>
+                        Building on foundational ML knowledge to implement predictive analytics and AI-driven 
+                        features in business applications, focusing on practical implementation.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Philosophy Section -->
+        <section class="section">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                Learning Philosophy
+            </h2>
+            <p class="section-description">
+                My approach to continuous education is grounded in practical application and systematic skill building.
+            </p>
+
+            <div class="academic-grid">
+                <div class="academic-card">
+                    <div class="academic-header">
+                        <div class="academic-logo">
+                            <i class="fas fa-target"></i>
+                        </div>
+                        <div class="academic-info">
+                            <h3>Problem-Driven Learning</h3>
+                        </div>
+                    </div>
+                    <div class="academic-details">
+                        <p class="academic-description">
+                            I pursue certifications and courses that directly solve real business challenges. 
+                            Each learning path is chosen to address specific gaps or opportunities in my current projects.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="academic-card">
+                    <div class="academic-header">
+                        <div class="academic-logo">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="academic-info">
+                            <h3>Foundation-First Approach</h3>
+                        </div>
+                    </div>
+                    <div class="academic-details">
+                        <p class="academic-description">
+                            Starting with Computer Science fundamentals before specialized certifications 
+                            ensures deep understanding rather than surface-level tool knowledge.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="academic-card">
+                    <div class="academic-header">
+                        <div class="academic-logo">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <div class="academic-info">
+                            <h3>Immediate Application</h3>
+                        </div>
+                    </div>
+                    <div class="academic-details">
+                        <p class="academic-description">
+                            Every certification leads to implementation in real projects. Learning is validated 
+                            through practical application, not just passing exams.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="academic-card">
+                    <div class="academic-header">
+                        <div class="academic-logo">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <div class="academic-info">
+                            <h3>Ecosystem Understanding</h3>
+                        </div>
+                    </div>
+                    <div class="academic-details">
+                        <p class="academic-description">
+                            Rather than isolated skills, I focus on understanding how technologies work together 
+                            to create comprehensive solutions for complex business needs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: var(--bg-dark); color: var(--text-white); padding: 3rem 2rem 2rem; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h4 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: white;">Tailor Maciel</h4>
+                    <p style="color: #d1d5db; line-height: 1.6;">Bridge-Builder Between Steel and Software</p>
+                    <p style="color: #d1d5db; line-height: 1.6;">Caxias do Sul, Rio Grande do Sul, Brazil</p>
+                </div>
+                <div>
+                    <h4 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: white;">Quick Links</h4>
+                    <p><a href="about.html" style="color: #d1d5db; text-decoration: none;">About</a></p>
+                    <p><a href="experience.html" style="color: #d1d5db; text-decoration: none;">Experience</a></p>
+                    <p><a href="projects.html" style="color: #d1d5db; text-decoration: none;">Projects</a></p>
+                </div>
+                <div>
+                    <h4 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: white;">Education</h4>
+                    <p style="color: #d1d5db; line-height: 1.6;">Computer Science Diploma</p>
+                    <p style="color: #d1d5db; line-height: 1.6;">10+ Professional Certifications</p>
+                    <p style="color: #d1d5db; line-height: 1.6;">Continuous Learning Approach</p>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: center; gap: 1rem; margin: 2rem 0;">
+                <a href="mailto:hello@tailormaciel.com" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 8px; color: white; font-size: 1.2rem; text-decoration: none; transition: all 0.3s ease;">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/tailor-maciel/" target="_blank" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 8px; color: white; font-size: 1.2rem; text-decoration: none; transition: all 0.3s ease;">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/tailormaciel" target="_blank" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 8px; color: white; font-size: 1.2rem; text-decoration: none; transition: all 0.3s ease;">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+
+            <div style="border-top: 1px solid #374151; padding-top: 2rem; color: #9ca3af;">
+                <p>&copy; 2025 Tailor Maciel. Comprehensive education meets practical application.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animations
+        document.querySelectorAll('.academic-card, .cert-provider, .timeline-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Certificate card hover effects
+        document.querySelectorAll('.cert-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.backgroundColor = 'var(--bg-accent)';
+                item.style.transform = 'translateX(5px)';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.backgroundColor = 'transparent';
+                item.style.transform = 'translateX(0)';
+            });
+        });
+
+        // Skill tags interaction
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.addEventListener('click', () => {
+                // Could link to specific skills page or projects using this skill
+                console.log('Skill clicked:', tag.textContent);
+            });
+        });
+
+        // Timeline item progression
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        timelineItems.forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.2}s`;
+        });
+
+        // Loading optimization
+        document.addEventListener('DOMContentLoaded', () => {
+            // Lazy load certificate verification links
+            const verifyLinks = document.querySelectorAll('.verify-link');
+            verifyLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // In real implementation, this would open actual certificate verification
+                    console.log('Certificate verification requested');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -239,7 +239,7 @@ Before any code suggestions, ensure:
 ### Documentation Reference Priority
 
 1. `docs/Daily_Development_Routine.md` - Complete workflow
-2. `docs/OOP_ARCHITECTURE_GUIDE.md` - Architectural decisions
+2. `docs/Complete_Architecture_Guide.md` - Architectural decisions
 3. `docs/backlog.md` - Current priorities
 4. `docs/SETUP.md` - Environment configuration
 5. `README.md` - Project overview

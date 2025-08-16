@@ -1,58 +1,56 @@
 # --- Python backend ---
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
 .venv/
-env/
-*.egg-info/
-# Ignore local SQLite DBs (if used for dev)
-*.sqlite3
-*.db
+.env
+.env.* 
+.python-version
+.pytest_cache/
+.coverage
+coverage.xml
 
 # --- Node.js / Frontend ---
 node_modules/
 dist/
 build/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-# Ignore frontend cache and lock files
+.cache/
+.parcel-cache/
 package-lock.json
 yarn.lock
 
-# --- Frontend assets ---
-frontend/js/dist/
-frontend/js/build/
-frontend/styles/dist/
-frontend/styles/build/
-
-# --- Environment / Secrets ---
-.env
-.env.*
-# Never commit secrets or credentials
-
-# --- Editor / IDE ---
-.vscode/
-.idea/
-*.swp
-
-# --- OS / Misc ---
+# --- OS / Editor ---
 .DS_Store
 Thumbs.db
-
-# --- Test / Coverage ---
-coverage/
-*.cover
+*~
+*.swp
+*.swo
+.idea/
+.vscode/
 *.log
 
-# --- Scripts / Generated files ---
-scripts/*.log
-scripts/*.tmp
+# --- Private project data (DO NOT COMMIT) ---
+content/private/
+content/private/**
+backend/.env
+backend/data/private/
+backend/storage/private/
+scripts/secrets/
+tmp_uploads/
+exports/
 
-# --- Documentation build artifacts (if any) ---
+# --- Keys and certificates ---
+*.pem
+*.key
+*.p12
+id_rsa
+id_rsa.pub
+
+# --- Docs / build artifacts ---
 docs/_build/
-docs/.doctrees/
-docs/.DS_Store
+*.htmlcov
 
-# --- Miscellaneous ---
-*.bak
-*.tmp
+# --- Misc ---
+*.egg-info/
+*.egg
+.terraform/

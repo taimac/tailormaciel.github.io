@@ -30,11 +30,23 @@ class SimpleIssuesExporter:
             "Authorization": f"token {self.token}",
             "Accept": "application/vnd.github.v3+json",
         }
+        session = requests.Session()
+        all_items = []
+        page = 1
+        per_page = 100
 
         try:
-            response = requests.get(self.api_url, headers=headers)
-            response.raise_for_status()  # Raise error for bad status codes
-            return response.json()
+            while True:
+                params = {"state": "all", "per_page": per_page, "page": page}
+                resp = session.get(self.api_url, headers=headers, params=params, timeout=30)
+                resp.raise_for_status()
+                batch = resp.json()
+                all_items.extend(batch)
+                if "next" in (resp.links or {}):
+                    page += 1
+                else:
+                    break
+            return all_items
         except requests.exceptions.RequestException as e:
             print(f"❌ Error fetching issues: {e}")
             return []
