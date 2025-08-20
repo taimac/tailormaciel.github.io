@@ -1,0 +1,77 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+# Educational: Black configuration follows single responsibility principle
+# Architecture: All Black-specific settings in one dedicated section
+line-length = 120
+target-version = ['py312']
+include = '\.pyi?$'
+extend-exclude = '''
+# Educational Note: Exclude patterns prevent formatting of generated/vendor code
+# Security Implication: Avoids accidentally formatting potentially malicious files
+/(
+  \.git
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | venv
+  | _build
+  | build
+  | dist
+  | __pycache__
+)/
+'''
+
+[tool.isort]
+# Educational: Import organization configuration with Black compatibility
+# Architecture: Demonstrates tool integration and consistency principles
+profile = "black"
+multi_line_output = 3
+line_length = 120
+known_first_party = ["scripts", "app"]
+force_grid_wrap = 0
+combine_as_imports = true
+include_trailing_comma = true
+
+[tool.ruff]
+# Educational: Global Ruff configuration (tool-wide settings)
+# Architecture: Separation of concerns - global vs specific configurations
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+# Educational: Lint-specific configuration (linting behavior only)
+# Architecture: Interface segregation - lint settings separated from global settings
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings  
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
+]
+ignore = [
+    "E501", # line too long (handled by black)
+    "B008", # do not perform function calls in argument defaults
+]
+
+[tool.pytest.ini_options]
+# Educational: Test configuration demonstrating comprehensive test setup
+# Architecture: Quality assurance configuration as infrastructure code
+testpaths = ["scripts/tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--strict-markers",
+    "--strict-config", 
+    "--verbose",
+    "--tb=short",
+    "--cov=scripts",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+    "--cov-fail-under=70"
+]

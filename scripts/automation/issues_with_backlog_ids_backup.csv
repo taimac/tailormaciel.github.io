@@ -105,6 +105,185 @@ Provide a script to start both servers (frontend static + Flask backend). Ensure
 **Depends On**: #1, #3
 
 **Suggested Branch**: `feature/issue-4-dev-servers`","type-feature, learning-architecture, priority-high, backlog-import-2025-08",open,Milestone 0
+B04.1 — Frontend CSS Architecture Setup,"**Backlog ID**: B04.1
+
+**Issue #4.1: Frontend CSS Architecture Setup**
+
+**Description**
+Refactor monolithic CSS into modular, component-based architecture following BEM methodology and Clean Architecture principles. Establish scalable stylesheet organization before implementing business logic components.
+
+**Learning Goals**
+- BEM methodology implementation and naming conventions
+- CSS custom properties system for consistent theming
+- Component-based styling patterns vs monolithic approaches
+- Responsive design architecture and breakpoint systems
+- CSS performance optimization and maintainability
+
+**Security Considerations**
+- Prevent CSS injection through proper sanitization
+- Implement Content Security Policy for style sources
+- Validate CSS custom property values
+
+**Architecture Notes**
+- Follows Single Responsibility Principle: each CSS file serves one purpose
+- Implements Open/Closed Principle: easy to add new components without modifying existing
+- Demonstrates separation of concerns: presentation separated from behavior
+
+**Acceptance Criteria**
+- [ ] Break `style.css` into modular structure: `base/`, `components/`, `layouts/`
+- [ ] Implement CSS custom properties for colors, spacing, typography
+- [ ] Add CSS naming conventions documentation following BEM
+- [ ] Create responsive breakpoint system with mobile-first approach
+- [ ] Validate no style regressions across existing components
+- [ ] Document CSS architecture decisions in `docs/css-architecture.md`
+
+**Subtasks**
+- [ ] Create `styles/base/reset.css` for cross-browser normalization
+- [ ] Create `styles/base/variables.css` for design tokens
+- [ ] Create `styles/base/typography.css` for text styling
+- [ ] Create `styles/components/` directory with component-specific styles
+- [ ] Create `styles/layouts/` for grid systems and page layouts
+- [ ] Update `styles/style.css` to import all modules
+- [ ] Add CSS linting configuration (stylelint)
+
+**Depends On**: B01
+
+**Suggested Branch**: `feature/issue-4_1-css-architecture`","type-feature, learning-architecture, component-ui, priority-critical, backlog-import-2025-08",open,Milestone 0
+B04.2 — JavaScript Component Architecture Foundation,"**Backlog ID**: B04.2
+
+**Issue #4.2: JavaScript Component Architecture Foundation**
+
+**Description**
+Establish ES6 module system and component base classes to prevent embedded JavaScript issues. Create architectural foundation for maintainable, testable UI components before implementing business logic.
+
+**Learning Goals**
+- ES6 module system patterns and import/export best practices
+- Component lifecycle management (mount, update, unmount)
+- Event-driven architecture and component communication
+- Clean separation of presentation logic from business logic
+- Abstract base classes and inheritance in JavaScript
+
+**Security Considerations**
+- Prevent XSS through safe DOM manipulation patterns
+- Implement input validation at component boundaries
+- Secure event handling to prevent event injection
+
+**Architecture Notes**
+- Implements Abstract Factory pattern for component creation
+- Uses Observer pattern for component communication
+- Follows Single Responsibility: each component has one clear purpose
+- Demonstrates Dependency Injection for better testability
+
+**Acceptance Criteria**
+- [ ] Create base `Component` class with lifecycle methods (`mount`, `update`, `unmount`)
+- [ ] Implement event system for component communication
+- [ ] Set up ES6 module import/export patterns throughout frontend
+- [ ] Create component registration system for automatic initialization
+- [ ] Add development-time component validation and warnings
+- [ ] Document component architecture patterns in `docs/component-architecture.md`
+
+**Subtasks**
+- [ ] Create `frontend/js/base/Component.js` with abstract base class
+- [ ] Create `frontend/js/utils/EventBus.js` for component communication
+- [ ] Create `frontend/js/utils/DOM.js` for safe DOM manipulation
+- [ ] Create `frontend/js/base/ComponentRegistry.js` for component management
+- [ ] Add component lifecycle documentation with examples
+- [ ] Set up module bundling configuration for development
+
+**Depends On**: B04.1
+
+**Suggested Branch**: `feature/issue-4_2-js-architecture`","type-feature, learning-architecture, component-ui, priority-critical, backlog-import-2025-08",open,Milestone 0
+B04.3 — Mobile Navigation Component Implementation,"**Backlog ID**: B04.3
+
+**Issue #4.3: Mobile Navigation Component Implementation**
+
+**Description**
+Implement professional mobile menu with accessibility, progressive enhancement, and smooth animations. Address Copilot feedback about incomplete mobile menu functionality by creating a fully functional component.
+
+**Learning Goals**
+- Progressive enhancement implementation (works without JS, enhanced with JS)
+- Touch and keyboard interaction patterns for mobile interfaces
+- CSS animation performance optimization techniques
+- Accessibility-first component design with ARIA attributes
+- Component state management and user interaction handling
+
+**Security Considerations**
+- Prevent navigation manipulation through secure route validation
+- Implement safe event handling to prevent injection attacks
+- Ensure focus management doesn't expose sensitive information
+
+**Architecture Notes**
+- Follows Strategy pattern for different menu animation types
+- Uses Template Method pattern for consistent menu behavior
+- Implements Observer pattern for menu state notifications
+- Demonstrates polymorphism through interface-based design
+
+**Acceptance Criteria**
+- [ ] Implement hamburger menu with smooth CSS animations
+- [ ] Add comprehensive keyboard navigation support (Tab, Enter, Escape)
+- [ ] Include ARIA attributes and screen reader announcements
+- [ ] Create touch gesture support for mobile devices
+- [ ] Test across different viewport sizes and orientations
+- [ ] Implement focus trap when menu is open
+- [ ] Add animation performance monitoring
+
+**Subtasks**
+- [ ] Create `MobileMenuComponent` class extending base Component
+- [ ] Implement CSS animations using transforms for performance
+- [ ] Add ARIA live regions for screen reader updates
+- [ ] Create keyboard navigation event handlers
+- [ ] Add touch gesture recognition for swipe interactions
+- [ ] Implement body scroll lock when menu is open
+- [ ] Add comprehensive accessibility testing documentation
+
+**Depends On**: B04.2
+
+**Suggested Branch**: `feature/issue-4_3-mobile-navigation`","type-feature, learning-frontend, component-ui, priority-high, backlog-import-2025-08",open,Milestone 0
+B04.4 — Certificate Verification System Implementation,"**Backlog ID**: B04.4
+
+**Issue #4.4: Certificate Verification System Implementation**
+
+**Description**
+Replace placeholder certificate verification with functional system. Address Copilot feedback about non-functional verification links and incomplete certificate validation features.
+
+**Learning Goals**
+- External API integration security and error handling
+- URL validation patterns and security considerations
+- User feedback systems for asynchronous operations
+- Error handling for third-party service failures
+- HTTP request security and data validation
+
+**Security Considerations**
+- Validate all certificate verification URLs to prevent redirect attacks
+- Implement proper error handling without exposing sensitive information
+- Secure HTTP requests with proper headers and timeouts
+- Prevent certificate data injection through input validation
+
+**Architecture Notes**
+- Uses Strategy pattern for different certificate providers
+- Implements Circuit Breaker pattern for external service failures
+- Follows Repository pattern for certificate data access
+- Demonstrates proper error boundary implementation
+
+**Acceptance Criteria**
+- [ ] Replace `href='#'` with actual certificate verification URLs
+- [ ] Implement certificate validation API integration
+- [ ] Add user feedback for verification status (loading, success, error)
+- [ ] Create comprehensive error handling for network failures
+- [ ] Add certificate authenticity validation
+- [ ] Open verification links in new tabs with proper security attributes
+
+**Subtasks**
+- [ ] Create `CertificateVerificationService` class
+- [ ] Implement URL validation and sanitization
+- [ ] Add loading states and user feedback components
+- [ ] Create error handling for various failure scenarios
+- [ ] Add certificate provider configuration system
+- [ ] Implement caching for verification results
+
+**Depends On**: B04.2
+
+**Suggested Branch**: `feature/issue-4_4-certificate-verification`","type-feature, learning-security, component-ui, priority-medium, backlog-import-2025-08",open,Milestone 0
 B05 — Base FileSystem Classes with Encapsulation,"**Backlog ID**: B05
 
 **Issue #5: Base FileSystem Classes with Encapsulation**
