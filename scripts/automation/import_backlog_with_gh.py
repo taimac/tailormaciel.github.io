@@ -860,7 +860,7 @@ class GitHubIssuesImporter:
                     break
                 elif response in ["a", "all"]:
                     # keep slice spacing tight (PEP8) and preserve semantics
-                    selected_commands.extend(new_commands[i - 1 :])
+                    selected_commands.extend(new_commands[i - 1:])
                     break
                 elif response in ["q", "quit"]:
                     print("\n🛑 Exiting interactive mode.")
