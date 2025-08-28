@@ -330,7 +330,7 @@ class GitHubIssuesExporter:
         open_prs = [p for p in prs if p.get("state") == "open"]
         closed_prs = [p for p in prs if p.get("state") != "open"]
 
-        ts = datetime.now(UTC).strftime("%Y-%m-%d %H:%M UTC")
+        ts = datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S UTC")
         header = (
             "# 📋 Development Backlog\n\n"
             f"Repository: {self.repo}\n\n"
