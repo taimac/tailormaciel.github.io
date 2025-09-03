@@ -8,6 +8,14 @@
     <meta name="author" content="Tailor Maciel">
     <title>Tailor Maciel - Steel to Software | Professional Portfolio</title>
     
+    <meta http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+               style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+               font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+               img-src 'self' data: https://cdn.jsdelivr.net;
+               script-src 'self';
+               connect-src 'self';">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,11 +23,12 @@
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="styles/style.css">
-    
-</head>
+    <!-- Clean Architecture: Single CSS entry point -->
+    <link rel="stylesheet" href="styles/pages/style.css">
+    <link rel="preload" href="scripts/siteController.js" as="script">
+ </head>
 
-<body>
+<body class="index-page">
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -247,102 +256,6 @@
     </footer>
 
     <!-- JavaScript -->
-    <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Mobile menu toggle (basic implementation)
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            // Add mobile menu functionality here
-            console.log('Mobile menu clicked - implement dropdown');
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-up');
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animations
-        document.querySelectorAll('.stat-card, .highlight-card, .nav-card').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Add loading state management
-        document.addEventListener('DOMContentLoaded', () => {
-            // Remove any loading states
-            document.body.classList.remove('loading');
-            
-            // Add entrance animations
-            setTimeout(() => {
-                document.querySelector('.hero-content').style.opacity = '1';
-                document.querySelector('.hero-content').style.transform = 'translateY(0)';
-            }, 100);
-        });
-
-        // Add some interactive elements
-        const statCards = document.querySelectorAll('.stat-card');
-        statCards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                const number = card.querySelector('.stat-number');
-                number.style.transform = 'scale(1.1)';
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                const number = card.querySelector('.stat-number');
-                number.style.transform = 'scale(1)';
-            });
-        });
-
-        // Performance optimization: Lazy loading for images (when you add them)
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.remove('lazy');
-                        imageObserver.unobserve(img);
-                    }
-                });
-            });
-
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
-    </script>
+    <script src="scripts/siteController.js"></script>
 </body>
 </html>

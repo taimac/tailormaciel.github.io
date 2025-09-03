@@ -1,0 +1,119 @@
+/*
+    Main CSS Architecture Entry Point
+    
+    Clean Architecture Principles Applied:
+    - Dependency Inversion: Higher-level modules don't depend on lower-level modules
+    - Single Responsibility: This file only orchestrates CSS architecture
+    - Open/Closed Principle: Easy to extend with new components without modification
+    
+    Security Considerations:
+    - No inline styles prevent CSS injection attacks
+    - Modular structure enables easier security auditing
+    - Centralized imports prevent dependency confusion
+    
+    Performance Optimization:
+    - Import order optimized for critical rendering path
+    - Foundation styles loaded first for layout stability
+    - Component styles loaded after utilities to prevent specificity conflicts
+    
+    Teaching Notes:
+    - This demonstrates CSS architecture at enterprise scale
+    - Each import represents a bounded context in domain modeling
+    - The order matters for both performance and maintainability
+*/
+
+/* ===== FOUNDATION LAYER ===== */
+/*
+    Infrastructure styles that all other layers depend on
+    Clean Architecture: This is your "Entities" layer for CSS
+    OOP Principle: Encapsulation of global design system
+*/
+@import url('../components/navbar.css');
+
+
+
+/* ===== UTILITY LAYER ===== */
+/*
+    Cross-cutting concerns and reusable patterns
+    Clean Architecture: "Use Cases" layer - business logic for styling
+    OOP Principle: Composition - utilities can be mixed and matched
+    
+    Import Order Rationale:
+    1. Layout utilities first (establish grid systems, containers)
+    2. Animation utilities second (can reference layout classes)
+*/
+@import url('../utils/layout.css');
+@import url('../utils/animation.css');
+
+/* ===== PRESENTATION LAYER ===== */
+/*
+    UI Components - the "Interface Adapters" of CSS architecture
+    OOP Principle: Encapsulation - each component manages its own styling
+    
+    Component Import Order Strategy:
+    1. Navigation first (affects page flow and z-index stacking)
+    2. Hero section (main content area)
+    3. Interactive elements (buttons, cards)
+    4. Structural components (sections, footer)
+    
+    Reasoning: Components that affect global layout come first,
+    then content components, then structural wrappers
+*/
+
+@import url('../base/base.css');
+@import url('../components/hero.css');
+@import url('../components/buttons.css');
+@import url('../components/card.css');
+@import url('../components/sections.css');
+@import url('../components/footer.css');
+
+/* ===== RESPONSIVE LAYER ===== */
+/*
+    Adaptive behavior - cross-cutting concern affecting all components
+    Clean Architecture: Infrastructure layer for responsive design
+    
+    Loading Strategy:
+    - Loaded last to override component styles with media queries
+    - Centralized responsive logic prevents component-level duplication
+    - Mobile-first approach implemented consistently
+    
+    Security Note:
+    - Centralized responsive logic prevents inconsistent behavior
+    - Easier to audit for performance and security issues
+*/
+@import url('../responsive/breakpoints.css');
+/* ...existing imports... */
+
+/* ===== FUTURE EXPANSION HOOKS ===== */
+/*
+    Planned architecture extensions for knowledge base features
+    
+    Uncomment and implement as needed:
+    
+    @import url('./components/knowledge-base.css');
+    @import url('./components/note-editor.css');
+    @import url('./components/document-viewer.css');
+    @import url('./utils/text.css');
+    @import url('./utils/spacing.css');
+    @import url('./themes/dark-mode.css');
+*/
+
+/* ===== DEVELOPMENT NOTES ===== */
+/*
+    Performance Monitoring:
+    - Total CSS bundle size target: < 50KB minified
+    - Critical CSS: base.css + layout.css + navbar.css
+    - Unused CSS elimination: Review quarterly
+    
+    Maintenance Guidelines:
+    - New components: Always add to components/ directory
+    - New utilities: Evaluate if truly reusable before adding
+    - Responsive changes: Only modify breakpoints.css
+    - Breaking changes: Update this import order documentation
+    
+    Testing Strategy:
+    - Visual regression testing: Run after any component changes
+    - Performance testing: Measure critical rendering path
+    - Accessibility testing: Validate color contrast and focus management
+    - Cross-browser testing: Ensure import compatibility
+*/

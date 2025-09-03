@@ -1,0 +1,227 @@
+/*
+    Card Component System - Preserving Design Identity
+    
+    OOP Principle: Inheritance with preserved visual identity
+    Clean Architecture: Organized code without breaking design
+    Security: Safe hover animations, no user-generated content risks
+    
+    Teaching Notes:
+    - Architecture should enhance, not replace working designs
+    - Code organization can improve maintainability without visual changes
+    - Separation of concerns applied while preserving aesthetic choices
+    
+    Design Philosophy:
+    - Preserve the blue gradients and professional aesthetic
+    - Maintain the existing icon styling and colors
+    - Keep the proven hover effects and transitions
+*/
+
+/* ===== STAT CARD COMPONENT ===== */
+/*
+    Statistics display cards - your original design preserved
+    OOP Principle: Encapsulation - stat card logic self-contained
+    Clean Architecture: Single responsibility for displaying metrics
+*/
+.stat-card {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary);
+    display: block;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+}
+
+/* ===== HIGHLIGHT CARD COMPONENT ===== */
+/*
+    Feature highlight cards - preserving your beautiful blue gradient design
+    OOP Principle: Composition - header and body work together
+    Clean Architecture: Modular structure with preserved aesthetics
+    
+    Design Notes:
+    - Blue gradient header preserved for visual impact
+    - Icon styling maintained for recognition
+    - Typography hierarchy kept for readability
+*/
+.highlight-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.highlight-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Preserved blue gradient header - this is what makes your cards distinctive */
+.highlight-header {
+    padding: 1.5rem;
+    background: var(--gradient-hero); /* Your beautiful blue gradient preserved */
+    color: white;
+}
+
+/* Icon styling preserved - maintaining visual consistency */
+.highlight-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2); /* Preserved translucent white background */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem; /* Icon size maintained */
+    color: white; /* Explicit white color for icons */
+}
+
+/* Typography preserved for design consistency */
+.highlight-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: white; /* Explicit white for contrast against blue */
+}
+
+.highlight-subtitle {
+    opacity: 0.9;
+    font-size: 0.95rem;
+    color: white; /* Preserved white text */
+}
+
+/* Body section with your original styling */
+.highlight-body {
+    padding: 1.5rem;
+}
+
+.highlight-body p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Interactive link with your original behavior */
+.highlight-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: all 0.3s ease;
+}
+
+.highlight-link:hover {
+    color: var(--primary-dark);
+    gap: 0.5rem; /* Smooth gap animation preserved */
+}
+
+/* ===== NAVIGATION CARD COMPONENT ===== */
+/*
+    Quick navigation cards - your clean design maintained
+    OOP Principle: Single responsibility for navigation
+    Clean Architecture: Focused component with clear purpose
+    
+    Design Notes:
+    - Clean white background preserved
+    - Icon and text hierarchy maintained
+    - Hover effects kept for interactivity
+*/
+.nav-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    color: var(--primary);
+}
+
+/* Icon styling preserved with explicit color */
+.nav-card-icon {
+    font-size: 2rem;
+    color: var(--primary); /* Preserved blue color for brand consistency */
+    margin-bottom: 0.5rem;
+    display: block; /* Ensure proper display */
+}
+
+/* Title styling maintained */
+.nav-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: inherit; /* Inherits from parent for hover effect */
+}
+
+/* Description styling preserved */
+.nav-card-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* ===== ACCESSIBILITY AND PERFORMANCE ===== */
+/*
+    Accessibility enhancements without breaking design
+    Security: Safe animations, performance optimized
+*/
+
+/* Focus indicators for accessibility */
+.highlight-card:focus-within,
+.nav-card:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Reduced motion respect - preserving accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .stat-card,
+    .highlight-card,
+    .nav-card,
+    .highlight-link {
+        transition: none;
+    }
+    
+    .stat-card:hover,
+    .highlight-card:hover,
+    .nav-card:hover {
+        transform: none;
+    }
+}
+
+/* High contrast mode support - maintaining readability */
+@media (prefers-contrast: high) {
+    .highlight-header {
+        background: var(--primary); /* Solid color instead of gradient for high contrast */
+    }
+    
+    .highlight-icon {
+        background: rgba(255, 255, 255, 0.9); /* More opaque for better contrast */
+        color: var(--primary);
+    }
+}

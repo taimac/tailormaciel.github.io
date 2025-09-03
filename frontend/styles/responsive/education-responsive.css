@@ -1,0 +1,100 @@
+/*
+    Education Page Responsive Design
+    
+    Clean Architecture: Cross-cutting responsive concern for education page
+    Teaching: Shows how to separate responsive logic by page/component
+    Performance: Optimized for mobile-first progressive enhancement
+*/
+
+/* Tablet and Mobile Breakpoint */
+@media (max-width: 768px) {
+    /* Page Header Adjustments */
+    .page-title {
+        font-size: var(--text-3xl); /* 1.875rem - reduced from 3rem */
+    }
+
+    .page-subtitle {
+        font-size: var(--text-lg); /* 1.125rem - reduced from 1.25rem */
+    }
+
+    /* Academic Grid Mobile Layout */
+    .academic-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: var(--space-lg); /* Reduced gap for mobile */
+    }
+
+    /* Certification Layout Adjustments */
+    .cert-item {
+        grid-template-columns: 1fr; /* Stack cert info and actions */
+        gap: var(--space-sm);
+    }
+
+    .cert-actions {
+        flex-direction: row; /* Horizontal layout on mobile */
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    /* Section Title Mobile Layout */
+    .section-title {
+        font-size: var(--text-2xl); /* 1.5rem */
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-sm);
+    }
+
+    /* Timeline Mobile Adjustments */
+    .learning-timeline {
+        padding-left: var(--space-lg); /* Reduced left padding */
+    }
+
+    .learning-timeline::before {
+        left: 8px; /* Adjust timeline line position */
+    }
+
+    .timeline-item::before {
+        left: -20px; /* Adjust timeline dots */
+    }
+
+    /* Skills Tags Mobile Wrapping */
+    .skills-tags {
+        justify-content: center; /* Center align on mobile */
+    }
+
+    .skill-tag {
+        font-size: var(--text-2xs); /* Even smaller on mobile */
+    }
+}
+
+/* Mobile Breakpoint */
+@media (max-width: 480px) {
+    /* Further mobile optimizations */
+    .main-content {
+        padding: var(--space-xl) var(--space-lg); /* Reduced padding */
+    }
+
+    .academic-card,
+    .cert-provider {
+        margin: 0 -var(--space-sm); /* Slight negative margin for more space */
+        border-radius: var(--border-radius-md); /* Less rounded on small screens */
+    }
+
+    /* Provider header mobile layout */
+    .provider-header {
+        padding: var(--space-lg); /* Reduced padding */
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-sm);
+    }
+
+    .provider-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Timeline mobile optimizations */
+    .timeline-item {
+        padding: var(--space-lg) var(--space-md); /* Reduced padding */
+        margin-bottom: var(--space-lg); /* Reduced margin */
+    }
+}

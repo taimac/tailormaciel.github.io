@@ -8,663 +8,36 @@
     <meta name="author" content="Tailor Maciel">
     <title>Education & Certifications - Tailor Maciel</title>
     
-    <!-- Fonts -->
+    <!-- Security: Content Security Policy for enhanced protection -->
+    <meta http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+               style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+               font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+               img-src 'self' data: https://cdn.jsdelivr.net;
+               script-src 'self';
+               connect-src 'self';">
+    
+    <!-- Performance: DNS prefetch and preconnect for external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts with optimized loading -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
+    <!-- Icons (Font Awesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
-    <style>
-        :root {
-            /* Professional Blue-Tech Color Scheme - Matching index.html */
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --primary-light: #3b82f6;
-            --secondary: #1e40af;
-            --accent: #06d6a0;
-            --accent-hover: #059669;
-            
-            /* Text Colors */
-            --text-primary: #1f2937;
-            --text-secondary: #6b7280;
-            --text-muted: #9ca3af;
-            --text-white: #ffffff;
-            
-            /* Background Colors */
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --bg-accent: #eff6ff;
-            --bg-dark: #1f2937;
-            
-            /* Border & Shadow */
-            --border-light: #e5e7eb;
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            
-            /* Gradients */
-            --gradient-hero: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            --gradient-accent: linear-gradient(135deg, var(--accent) 0%, #10b981 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background: var(--bg-primary);
-        }
-
-        /* Navigation - Matching index.html */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-light);
-            z-index: 1000;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .navbar.scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: var(--shadow-md);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-        }
-
-        .logo {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--primary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .logo:hover {
-            color: var(--primary-dark);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a.active {
-            color: var(--primary);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--primary);
-        }
-
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
-        }
-
-        .kb-login {
-            background: var(--primary) !important;
-            color: white !important;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            transition: all 0.3s ease;
-        }
-
-        .kb-login:hover {
-            background: var(--primary-dark) !important;
-            transform: translateY(-1px);
-        }
-
-        .kb-login::after {
-            display: none;
-        }
-
-        /* Page Header */
-        .page-header {
-            margin-top: 70px;
-            padding: 4rem 2rem 2rem;
-            background: var(--gradient-hero);
-            color: white;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .page-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5" opacity="0.15"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .page-title {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .page-subtitle {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .breadcrumb {
-            margin-top: 2rem;
-            opacity: 0.8;
-        }
-
-        .breadcrumb a {
-            color: white;
-            text-decoration: none;
-            margin-right: 0.5rem;
-        }
-
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-
-        /* Main Content */
-        .main-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .section {
-            margin-bottom: 4rem;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .section-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        .section-description {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        /* Academic Education */
-        .academic-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .academic-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-left: 4px solid var(--primary);
-        }
-
-        .academic-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .academic-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .academic-logo {
-            width: 60px;
-            height: 60px;
-            background: var(--bg-accent);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 1.5rem;
-        }
-
-        .academic-info h3 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.3rem;
-        }
-
-        .academic-institution {
-            color: var(--primary);
-            font-weight: 500;
-            font-size: 1rem;
-        }
-
-        .academic-details {
-            margin-bottom: 1rem;
-        }
-
-        .academic-date {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .academic-description {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .academic-highlights {
-            list-style: none;
-        }
-
-        .academic-highlights li {
-            color: var(--text-secondary);
-            margin-bottom: 0.3rem;
-            padding-left: 1.2rem;
-            position: relative;
-        }
-
-        .academic-highlights li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        /* Professional Certifications */
-        .certifications-container {
-            display: grid;
-            gap: 2rem;
-        }
-
-        .cert-provider {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
-        }
-
-        .cert-provider:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .provider-header {
-            padding: 1.5rem 2rem;
-            background: var(--bg-secondary);
-            border-bottom: 1px solid var(--border-light);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .provider-logo {
-            width: 50px;
-            height: 50px;
-            background: white;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .provider-logo img {
-            width: 30px;
-            height: 30px;
-            object-fit: contain;
-        }
-
-        .provider-info h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .provider-count {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .cert-list {
-            padding: 1.5rem 2rem;
-        }
-
-        .cert-item {
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--border-light);
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 1rem;
-            align-items: start;
-        }
-
-        .cert-item:last-child {
-            border-bottom: none;
-        }
-
-        .cert-info h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.3rem;
-        }
-
-        .cert-date {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .cert-description {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .cert-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            align-items: flex-end;
-        }
-
-        .cert-badge {
-            background: var(--accent);
-            color: white;
-            padding: 0.25rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .verify-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            transition: all 0.3s ease;
-        }
-
-        .verify-link:hover {
-            color: var(--primary-dark);
-            gap: 0.5rem;
-        }
-
-        /* Skills Mapping */
-        .skills-map {
-            background: var(--bg-secondary);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-top: 2rem;
-        }
-
-        .skills-map h4 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-        }
-
-        .skills-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-tag {
-            background: white;
-            color: var(--text-secondary);
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-family: 'JetBrains Mono', monospace;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s ease;
-        }
-
-        .skill-tag:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-1px);
-        }
-
-        /* Continuous Learning */
-        .learning-timeline {
-            position: relative;
-            padding-left: 2rem;
-        }
-
-        .learning-timeline::before {
-            content: '';
-            position: absolute;
-            left: 15px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--border-light);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2rem;
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s ease;
-        }
-
-        .timeline-item:hover {
-            box-shadow: var(--shadow-md);
-            transform: translateX(5px);
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -27px;
-            top: 20px;
-            width: 12px;
-            height: 12px;
-            background: var(--primary);
-            border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px var(--border-light);
-        }
-
-        .timeline-status {
-            display: inline-block;
-            padding: 0.2rem 0.6rem;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .status-completed {
-            background: var(--accent);
-            color: white;
-        }
-
-        .status-current {
-            background: #fbbf24;
-            color: white;
-        }
-
-        .status-planned {
-            background: var(--bg-accent);
-            color: var(--primary);
-        }
-
-        .timeline-item h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.3rem;
-        }
-
-        .timeline-item p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .page-title {
-                font-size: 2rem;
-            }
-
-            .page-subtitle {
-                font-size: 1.1rem;
-            }
-
-            .main-content {
-                padding: 2rem 1rem;
-            }
-
-            .academic-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cert-item {
-                grid-template-columns: 1fr;
-                gap: 0.5rem;
-            }
-
-            .cert-actions {
-                flex-direction: row;
-                align-items: flex-start;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.5rem;
-            }
-
-            .learning-timeline {
-                padding-left: 1rem;
-            }
-
-            .learning-timeline::before {
-                left: 8px;
-            }
-
-            .timeline-item::before {
-                left: -20px;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+    <!-- Page-specific CSS for clean architecture -->
+    <link rel="stylesheet" href="styles/pages/education.css">
+    
+    <!-- Performance: Preload critical JavaScript (must also load with <script> in body) -->
+    
+    <link rel="preload" href="scripts/pages/education.js" as="script">
+    <!-- <link rel="preload" href="scripts/siteController.js" as="script">
+ -->
 </head>
-<body>
+<body class="education-page">
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -679,10 +52,15 @@
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="knowledge-base.html" class="kb-login">KB</a></li>
             </ul>
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
-    <!-- Page Header -->
+    <!-- Page Header -->    
     <section class="page-header">
         <div class="header-content">
             <h1 class="page-title">Education & Certifications</h1>
@@ -1324,116 +702,51 @@
     </div>
 
     <!-- Footer -->
-    <footer style="background: var(--bg-dark); color: var(--text-white); padding: 3rem 2rem 2rem; text-align: center;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
-                <div>
-                    <h4 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: white;">Tailor Maciel</h4>
-                    <p style="color: #d1d5db; line-height: 1.6;">Bridge-Builder Between Steel and Software</p>
-                    <p style="color: #d1d5db; line-height: 1.6;">Caxias do Sul, Rio Grande do Sul, Brazil</p>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Tailor Maciel</h4>
+                    <p>Bridge-Builder Between Steel and Software</p>
+                    <p>Caxias do Sul, Rio Grande do Sul, Brazil</p>
                 </div>
-                <div>
-                    <h4 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: white;">Quick Links</h4>
-                    <p><a href="about.html" style="color: #d1d5db; text-decoration: none;">About</a></p>
-                    <p><a href="experience.html" style="color: #d1d5db; text-decoration: none;">Experience</a></p>
-                    <p><a href="projects.html" style="color: #d1d5db; text-decoration: none;">Projects</a></p>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="about.html">About</a></p>
+                    <p><a href="experience.html">Experience</a></p>
+                    <p><a href="projects.html">Projects</a></p>
                 </div>
-                <div>
-                    <h4 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: white;">Education</h4>
-                    <p style="color: #d1d5db; line-height: 1.6;">Computer Science Diploma</p>
-                    <p style="color: #d1d5db; line-height: 1.6;">10+ Professional Certifications</p>
-                    <p style="color: #d1d5db; line-height: 1.6;">Continuous Learning Approach</p>
+                <div class="footer-section">
+                    <h4>Specialties</h4>
+                    <p>Full-Stack Development</p>
+                    <p>Business Automation</p>
+                    <p>B2B Relationship Building</p>
                 </div>
             </div>
 
-            <div style="display: flex; justify-content: center; gap: 1rem; margin: 2rem 0;">
-                <a href="mailto:hello@tailormaciel.com" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 8px; color: white; font-size: 1.2rem; text-decoration: none; transition: all 0.3s ease;">
+            <div class="social-links">
+                <a href="mailto:hello@tailormaciel.com" title="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/tailor-maciel/" target="_blank" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 8px; color: white; font-size: 1.2rem; text-decoration: none; transition: all 0.3s ease;">
+                <a href="https://www.linkedin.com/in/tailor-maciel/" target="_blank" title="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="https://github.com/tailormaciel" target="_blank" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 8px; color: white; font-size: 1.2rem; text-decoration: none; transition: all 0.3s ease;">
+                <a href="https://github.com/tailormaciel" target="_blank" title="GitHub">
                     <i class="fab fa-github"></i>
+                </a>
+                <a href="https://twitter.com/TailorMaciel" target="_blank" title="Twitter">
+                    <i class="fab fa-twitter"></i>
                 </a>
             </div>
 
-            <div style="border-top: 1px solid #374151; padding-top: 2rem; color: #9ca3af;">
-                <p>&copy; 2025 Tailor Maciel. Comprehensive education meets practical application.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tailor Maciel. Designed and built with passion for clean code and great user experiences.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+    <script src="scripts/pages/education.js"></script>
+    <!-- <script src="scripts/siteController.js"></script> -->
 
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-up');
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animations
-        document.querySelectorAll('.academic-card, .cert-provider, .timeline-item').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Certificate card hover effects
-        document.querySelectorAll('.cert-item').forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                item.style.backgroundColor = 'var(--bg-accent)';
-                item.style.transform = 'translateX(5px)';
-            });
-            
-            item.addEventListener('mouseleave', () => {
-                item.style.backgroundColor = 'transparent';
-                item.style.transform = 'translateX(0)';
-            });
-        });
-
-        // Skill tags interaction
-        document.querySelectorAll('.skill-tag').forEach(tag => {
-            tag.addEventListener('click', () => {
-                // Could link to specific skills page or projects using this skill
-                console.log('Skill clicked:', tag.textContent);
-            });
-        });
-
-        // Timeline item progression
-        const timelineItems = document.querySelectorAll('.timeline-item');
-        timelineItems.forEach((item, index) => {
-            item.style.animationDelay = `${index * 0.2}s`;
-        });
-
-        // Loading optimization
-        document.addEventListener('DOMContentLoaded', () => {
-            // Lazy load certificate verification links
-            const verifyLinks = document.querySelectorAll('.verify-link');
-            verifyLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    // In real implementation, this would open actual certificate verification
-                    console.log('Certificate verification requested');
-                });
-            });
-        });
-    </script>
 </body>
 </html>
