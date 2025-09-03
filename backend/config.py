@@ -26,6 +26,7 @@ class BaseConfig:
         - Demonstrates secure default configuration
         - Illustrates separation of concerns in system configuration
     """
+
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
@@ -40,6 +41,7 @@ class DevelopmentConfig(BaseConfig):
         - Clear separation between dev and prod settings
         - Demonstrates polymorphism through config class substitution
     """
+
     DEBUG = True
 
 
@@ -56,6 +58,7 @@ class ProductionConfig(BaseConfig):
         - Inheritance allows shared base config with prod-specific overrides
         - Demonstrates Open/Closed Principle: open for extension, closed for modification
     """
+
     DEBUG = False
 
 
@@ -85,9 +88,7 @@ def runtime_settings():
     """
     return {
         "SECRET_KEY": os.environ.get("SECRET_KEY", secrets.token_urlsafe(32)),
-        "SQLALCHEMY_DATABASE_URI": os.environ.get(
-            "DATABASE_URL", "sqlite:///development.db"
-        ),
+        "SQLALCHEMY_DATABASE_URI": os.environ.get("DATABASE_URL", "sqlite:///development.db"),
     }
 
 

@@ -1,0 +1,71 @@
+/*
+    Responsive Design Breakpoints
+    OOP Principle: Separation of Concerns - responsive logic isolated
+    Clean Architecture: Cross-cutting concern
+    Teaching: Progressive enhancement from mobile-first
+*/
+
+/* Tablet and Mobile Breakpoint */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .highlights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-nav-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Mobile Breakpoint */
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .hero-container {
+        padding: 0 1rem;
+    }
+
+    .overview,
+    .highlights,
+    .quick-nav {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-nav-grid {
+        grid-template-columns: 1fr;
+    }
+}

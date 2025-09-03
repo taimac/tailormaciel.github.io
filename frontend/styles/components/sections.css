@@ -1,0 +1,59 @@
+/*
+    Section Layout Components
+    OOP Principle: Template Method Pattern - sections share structure, vary content
+    Clean Architecture: Page layout components
+*/
+
+.section {
+    padding: 5rem 2rem;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-container-narrow {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Section Variants */
+.overview {
+    padding: 5rem 2rem;
+    background: var(--bg-secondary);
+}
+
+.highlights {
+    padding: 5rem 2rem;
+    background: var(--bg-primary);
+}
+
+.quick-nav {
+    padding: 4rem 2rem;
+    background: var(--bg-accent);
+}
+
+.quick-nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}

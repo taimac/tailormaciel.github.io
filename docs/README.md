@@ -182,8 +182,8 @@ python -m http.server 3000
 
 # 4. Set up minimal backend
 cd backend
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+python -m venv .venv
+source .venv/bin/activate  # Windows: venv\Scripts\activate
 pip install flask pyjwt werkzeug
 
 # 5. Start development environment

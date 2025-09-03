@@ -1,0 +1,396 @@
+/*
+    Foundation Layer - Design System & Global Styles
+    
+    Clean Architecture: Infrastructure layer that all other styles depend on
+    OOP Principle: Encapsulation of global design tokens and behaviors
+    Security: Defensive CSS patterns to prevent common vulnerabilities
+    
+    Design System Philosophy:
+    - Semantic naming over descriptive naming
+    - Progressive enhancement from mobile-first
+    - Accessibility as a core requirement, not an afterthought
+    - Performance optimization through CSS custom properties
+*/
+
+/* ===== DESIGN TOKENS - CORE SYSTEM ===== */
+/*
+    Design tokens represent design decisions as data
+    Teaching: These become the "API" for your design system
+    Security: Centralized values prevent inconsistent styling
+*/
+
+:root {
+    /* ===== COLOR SYSTEM ===== */
+    /*
+        Professional Blue-Tech Color Scheme
+        Teaching: Primary/Secondary/Accent creates visual hierarchy
+        Accessibility: All colors meet WCAG AA contrast requirements
+    */
+    
+    /* Brand Colors - Core Identity */
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #3b82f6;
+    --secondary: #1e40af;
+    --accent: #06d6a0;
+    --accent-hover: #059669;
+    
+    /* Semantic Text Colors - Intent-Based Naming */
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --text-muted: #9ca3af;
+    --text-white: #ffffff;
+    --text-inverse: #ffffff;  /* For dark backgrounds */
+    
+    /* Semantic Background Colors */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-accent: #eff6ff;
+    --bg-dark: #1f2937;
+    --bg-overlay: rgba(0, 0, 0, 0.5); /* For modals/overlays */
+    
+    /* Interactive State Colors */
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-error: #ef4444;
+    --color-info: #3b82f6;
+    
+    /* Border & Elevation System */
+    --border-light: #e5e7eb;
+    --border-medium: #d1d5db;
+    --border-dark: #9ca3af;
+    
+    /* Shadow System - Elevation Hierarchy */
+    --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    
+    /* ===== SPACING SYSTEM ===== */
+    /*
+        8px-based spacing scale for visual consistency
+        Teaching: Mathematical spacing creates professional layouts
+        Performance: CSS custom properties are cached by browsers
+    */
+    --space-xs: 0.25rem;  /* 4px */
+    --space-sm: 0.5rem;   /* 8px */
+    --space-md: 1rem;     /* 16px */
+    --space-lg: 1.5rem;   /* 24px */
+    --space-xl: 2rem;     /* 32px */
+    --space-2xl: 3rem;    /* 48px */
+    --space-3xl: 4rem;    /* 64px */
+    --space-4xl: 6rem;    /* 96px */
+    
+    /* ===== TYPOGRAPHY SYSTEM ===== */
+    /*
+        Typographic scale based on modular ratios
+        Teaching: Consistent typography creates visual hierarchy
+        Accessibility: Scalable font sizes support user preferences
+    */
+    
+    /* Font Families */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', monospace;
+    --font-heading: var(--font-primary); /* Can be different if needed */
+    
+    /* Font Size Scale */
+    --text-xs: 0.75rem;   /* 12px */
+    --text-sm: 0.875rem;  /* 14px */
+    --text-base: 1rem;    /* 16px - browser default */
+    --text-lg: 1.125rem;  /* 18px */
+    --text-xl: 1.25rem;   /* 20px */
+    --text-2xl: 1.5rem;   /* 24px */
+    --text-3xl: 1.875rem; /* 30px */
+    --text-4xl: 2.25rem;  /* 36px */
+    --text-5xl: 3rem;     /* 48px */
+    
+    /* Font Weights */
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    
+    /* Line Heights */
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.625;
+    --line-height-loose: 2;
+    
+    /* ===== LAYOUT SYSTEM ===== */
+    /*
+        Container and breakpoint system
+        Teaching: Consistent widths create professional layouts
+        Performance: CSS custom properties enable dynamic theming
+    */
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
+    --container-2xl: 1536px;
+    
+    /* Common Layout Values */
+    --border-radius-sm: 0.375rem;  /* 6px */
+    --border-radius-md: 0.5rem;    /* 8px */
+    --border-radius-lg: 0.75rem;   /* 12px */
+    --border-radius-xl: 1rem;      /* 16px */
+    --border-radius-full: 9999px;  /* Fully rounded */
+    
+    /* ===== ANIMATION SYSTEM ===== */
+    /*
+        Consistent timing and easing for professional feel
+        Teaching: Standardized animations create cohesive UX
+        Accessibility: Respects user motion preferences
+    */
+    --duration-fast: 150ms;
+    --duration-normal: 300ms;
+    --duration-slow: 500ms;
+    
+    --ease-linear: linear;
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* ===== GRADIENT SYSTEM ===== */
+    /*
+        Brand gradients for visual impact
+        Teaching: Consistent gradients strengthen brand identity
+        Performance: CSS gradients are GPU-accelerated
+    */
+    --gradient-hero: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--accent) 0%, #10b981 100%);
+    --gradient-subtle: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    
+    /* ===== Z-INDEX SYSTEM ===== */
+    /*
+        Layering system to prevent z-index conflicts
+        Teaching: Systematic layering prevents CSS specificity wars
+        Security: Controlled layering prevents UI redressing attacks
+    */
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal-backdrop: 1040;
+    --z-modal: 1050;
+    --z-popover: 1060;
+    --z-tooltip: 1070;
+    --z-toast: 1080;
+}
+
+/* ===== GLOBAL RESET & NORMALIZATION ===== */
+/*
+    Defensive CSS to prevent browser inconsistencies and security issues
+    Teaching: Reset creates consistent foundation across browsers
+    Security: Prevents layout-based attacks and overflow issues
+*/
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* Root font size for rem calculations */
+    font-size: 16px;
+    
+    /* Smooth scrolling for better UX */
+    /* scroll-behavior: smooth; */
+    
+    /* Prevent horizontal scrolling on mobile */
+    overflow-x: hidden;
+    
+    /* Enable font feature settings */
+    font-feature-settings: 'kern' 1, 'liga' 1;
+    
+    /* Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    /* Typography foundation */
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+    
+    /* Color foundation */
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    
+    /* Prevent font size inflation on mobile */
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+/* ===== ACCESSIBILITY FOUNDATION ===== */
+/*
+    Accessibility as a core requirement, not an afterthought
+    Teaching: Inclusive design benefits everyone
+    Security: Proper focus management prevents keyboard traps
+*/
+
+/* Focus management - visible and consistent */
+:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: var(--border-radius-sm);
+}
+
+/* Remove focus outline for mouse users, keep for keyboard users */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Ensure focus is visible for keyboard users */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* ===== TYPOGRAPHY FOUNDATION ===== */
+/*
+    Global typography patterns and link behaviors
+    Teaching: Consistent typography creates professional appearance
+    Security: Safe link styling prevents phishing attacks
+*/
+
+/* Link foundation */
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-out);
+}
+
+a:hover,
+a:focus {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+/* Visited links (important for accessibility) */
+a:visited {
+    color: var(--primary-dark);
+}
+
+/* Selection styling */
+::selection {
+    background-color: var(--accent);
+    color: var(--text-white);
+    text-shadow: none;
+}
+
+::-moz-selection {
+    background-color: var(--accent);
+    color: var(--text-white);
+    text-shadow: none;
+}
+
+/* ===== RESPONSIVE IMAGES & MEDIA ===== */
+/*
+    Responsive media foundation
+    Teaching: Responsive images prevent layout breaks
+    Performance: Proper image sizing improves load times
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== FORM FOUNDATION ===== */
+/*
+    Consistent form element styling
+    Teaching: Form consistency improves user experience
+    Security: Proper form styling prevents user confusion
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+}
+
+button,
+input {
+    overflow: visible;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+/* ===== REDUCED MOTION SUPPORT ===== */
+/*
+    Accessibility: Respect user's motion preferences
+    Teaching: Inclusive design considers all users
+    Performance: Disabling animations can improve performance
+*/
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ===== HIGH CONTRAST MODE SUPPORT ===== */
+/*
+    Accessibility: Support for high contrast mode
+    Teaching: Inclusive design reaches more users
+    Security: High contrast prevents vision-based social engineering
+*/
+
+@media (prefers-contrast: high) {
+    :root {
+        --border-light: #000000;
+        --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* ===== DARK MODE PREPARATION ===== */
+/*
+    Future-proofing for dark mode implementation
+    Teaching: Planning for features prevents technical debt
+    UX: Dark mode reduces eye strain and saves battery
+*/
+
+@media (prefers-color-scheme: dark) {
+    /* Dark mode styles will be implemented here in future phases */
+    /* Commented out to maintain current light theme */
+    /*
+    :root {
+        --bg-primary: #1f2937;
+        --bg-secondary: #111827;
+        --text-primary: #f9fafb;
+        --text-secondary: #d1d5db;
+    }
+    */
+}
