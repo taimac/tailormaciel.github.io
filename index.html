@@ -1,437 +1,312 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Online Materials">
-	<meta name="author" content="Tailor Maciel">
-	<title>Tailor Maciel</title>
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-	<link href="style/style.css" rel="stylesheet">
-	<link href="style/popup.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://kit.fontawesome.com/d0b5bc3a06.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tailor Maciel — profissional de vendas B2B e construtor de sistemas focado em inteligência comercial, automação de processos e ferramentas práticas com apoio de IA para operações industriais." data-i18n-content="index.metaDesc">
+    <meta name="author" content="Tailor Maciel">
+    <title data-i18n="index.pageTitle">Tailor Maciel — Inteligência Comercial & Sistemas</title>
+    <link rel="stylesheet" href="styles/pages/main.css?v=20260506-framed-hero">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
-	<!-- HEADER START- NAVEGATION BAR FIXED AT THE TOP OF THE PAGE-->	
-    <header class="nav">
-        <!-- <div class="logo"><a href="index.html"><img alt="Online Materials Website" src="images/cards/logo.jpg" ></a></div> -->
-		<nav class="navbar">
-			<buttom class="burger" id="burger">
-				<i class="fas fa-bars"></i>
-			</buttom>
-			<ul class="nav-ul" id="nav-ul">
-				<li><a href="index.html#bioID">Bio</a></li>
-				<li><a href="index.html#workID">Work</a></li>
-				<li><a href="index.html#eduID">Background </a></li>
-                <li><a href="index.html#guidanceID">Career Path</a></li>
-				<li><a href="index.html#footerID">Say Hello</a></li>
-                <!-- <li><a href="report.html">What to say </a></li> -->
-				<!-- <li><i class="fas fa-search"></i></li> -->
-			</ul>
-		</nav> 
+<body class="index-page">
 
-		<!-- A MENU WINDOW FOR MOBILE  -->
-		<menu class="resp-menu" id="menu">
-			<p class="resp-menu-X" id="cross">X</p>
-			<a class="resp-menu-list" href="index.html#bioID">Bio</a>
-			<a class="resp-menu-list" href="index.html#workID">Work</a>
-			<a class="resp-menu-list" href="index.html#eduID">Background </a>
-			<a class="resp-menu-list" href="index.html#guidanceID">Career Path</a>
-			<!-- <a class="resp-menu-list" href="report.html">What to say </a> -->
-		</menu>
-	</header>
-	<!-- HEADER END -->
-	
-	<!-- MAIN SECTION START -->
-	<main class="clear main">
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">TM</a>
+            <ul class="nav-links">
+                <li><a href="about.html" data-i18n="nav.about">Sobre</a></li>
+                <li><a href="experience.html" data-i18n="nav.experience">Experiência</a></li>
+                <li><a href="education.html" data-i18n="nav.education">Formação</a></li>
+                <li><a href="contact.html" data-i18n="nav.contact">Contato</a></li>
+            </ul>
+            <div class="nav-end">
+                <button id="langToggle" class="lang-toggle">EN</button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" data-i18n-aria="nav.menuAria" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
 
-		<!-- HOME PAGE INTRO VIDEO START -->
-		<section class="intro">
-				<video class="intro-video" poster="images/cards/present_Moment.jpg" height="40" autoplay muted loop>
-					<source src="images/video/present.mp4" type="video/mp4">
-				</video>
-				<h1 id="intro-caption"> </h1>
-		</section>
-		<!-- INTRO VIDEO END -->
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-greeting"><span data-i18n="index.heroEyebrow">Caxias do Sul, Brasil</span></div>
+                <h1 class="hero-title">Tailor Maciel</h1>
+                <h2 class="hero-subtitle" data-i18n="index.heroSubtitle">Operador Comercial B2B Construindo Sistemas de Inteligência Comercial</h2>
+                <p class="hero-description" data-i18n="index.heroDesc">
+                    Combino mais de 20 anos em vendas de matérias-primas industriais com software, dados e fluxos de trabalho apoiados por IA para tornar operações comerciais mais claras, rápidas e acionáveis.
+                </p>
+                <div class="hero-actions">
+                    <a href="experience.html" class="btn-primary"><span data-i18n="index.heroBtnWork">Ver o Trabalho</span> <i class="fas fa-arrow-right"></i></a>
+                    <a href="about.html" class="btn-secondary"><span data-i18n="index.heroBtnStory">Ler a História</span> <i class="fas fa-user"></i></a>
+                </div>
+            </div>
+            <div class="hero-photo" aria-hidden="true">
+                <div class="hero-photo__frame">
+                    <img src="images/cards/hero-tailor-maciel.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
 
-		<section id="bioID" class="bio">
-			<div class="bioSec">
-				<img src="images/cards/me3.jpeg"   alt="Bio">
-			</div>
-			<div class="bioSec">
-				<h2>About Tailor Maciel</h2>
-				<!-- <i class="fas fa-quote-left"></i> -->
-				
-				<p id="phrase-ref" > Husband, Father, Son, Pet Lover, Entrepreneur and Aspiring Computer Scientist living in South America (order may change according to the circumstance :).<br>
-					I enjoy engaging with people motivated by gratitude, collaboration and commitment to results. </p>
-			</div>
-		</section>
+    <!-- Stats bar -->
+    <div class="stats-bar">
+        <div class="stats-bar__grid">
+            <div class="stat-item">
+                <span class="stat-item__number">20+</span>
+                <span class="stat-item__label" data-i18n="index.statsYears">Anos de Experiência B2B</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-item__number">1000+</span>
+                <span class="stat-item__label" data-i18n="index.statsCompanies">Empresas Atendidas</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-item__number">240</span>
+                <span class="stat-item__label" data-i18n="index.statsCredits">Créditos em CS — Univ. of London</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-item__number">3</span>
+                <span class="stat-item__label" data-i18n="index.statsLanguages">Idiomas</span>
+            </div>
+        </div>
+    </div>
 
-		<section id="workID" class="work">
-			<div >
-				<h2>Work experience</h2>
-				<p class="cardinfo">I have been working for over 20 years for the main raw material distribution companies in Brazil, with steel being the main product.<br> 
-					My main role has been commercially managing the supply negotiations.<br>
-					During this period, I've discovered more than 1000 companies in the southern region of Brazil that consume the materials we sell. <br>
-					I helped these companies form lasting relationships and develop mutual interests based on trust and understanding of key market dynamics.</p>
+    <!-- About teaser -->
+    <section class="section">
+        <div class="section__container">
+            <div class="prose-grid">
+                <div class="prose-grid__text">
+                    <span class="eyebrow" data-i18n="index.aboutEyebrow">Quem Sou</span>
+                    <h2 data-i18n="index.aboutTitle">Experiência Comercial Transformada em Sistemas</h2>
+                    <p data-i18n="index.aboutP1">
+                        Comecei minha trajetória profissional aos quatorze anos em vendas e passei as duas décadas seguintes entendendo como o comércio industrial realmente funciona: clientes, fornecedores, cotações, follow-ups, atrasos, materiais, crédito, confiança e timing.
+                    </p>
+                    <p data-i18n="index.aboutP2">
+                        Meu trabalho atual é tornar essa realidade operacional mais visível e mais fácil de agir. Uso software, dados e fluxos com apoio de IA para estruturar informações comerciais, reduzir atrito manual e transformar experiência em apoio à decisão.
+                    </p>
+                    <a href="about.html" class="btn-outline"><span data-i18n="index.aboutBtn">História Completa</span> <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="prose-grid__visual">
+                    <div style="background: var(--bg-steel); border-radius: var(--border-radius-xl); padding: var(--space-2xl); border-left: 4px solid var(--accent);">
+                        <p style="font-size: var(--text-lg); color: var(--text-primary); line-height: 1.6; font-style: italic; margin: 0;" data-i18n="index.aboutQuote">
+                            "Meu trabalho parte do campo: clientes, fornecedores, cotações, follow-ups, relatórios, atrasos e decisões. Eu construo sistemas para tornar essa realidade mais clara e mais fácil de agir."
+                        </p>
+                        <p style="margin-top: var(--space-lg); font-weight: var(--font-weight-semibold); color: var(--text-secondary); font-size: var(--text-sm);">— Tailor Maciel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<div class="work-logo" >
-					<div>
-						<img src="images/logos/pana.png"   alt="pana">
-					</div>
-					<div>
-						<img src="images/logos/jati.png"   alt="jati">
-					</div>
-					<div>
-						<img src="images/logos/bold.png"   alt="bold">
-					</div>
-					
-				</div>
-				
-			</div>
-		</section>
-		
-		<!-- 2 column grid for academic background START -->
-		<section id="eduID" class="edu">
-			
-			<h2>Academic Education</h2>
+    <!-- Experience teaser -->
+    <section class="section section--steel">
+        <div class="section__container">
+            <div class="section__header">
+                <span class="eyebrow" data-i18n="index.careerEyebrow">Carreira</span>
+                <h2 class="section-title" data-i18n="index.careerTitle">Construído Sobre 20 Anos de Campo</h2>
+                <p class="section-subtitle" data-i18n="index.careerSubtitle">Fornecimento comercial, negociação B2B e desenvolvimento de mercado no corredor metalmecânico do Sul do Brasil.</p>
+            </div>
+            <div class="cards-grid-3">
+                <div class="card">
+                    <div class="card__icon"><i class="fas fa-industry"></i></div>
+                    <div class="card__subtitle" data-i18n="index.fermacSubtitle">Fundador</div>
+                    <div class="card__title">Fermac Representações</div>
+                    <div class="card__body" data-i18n="index.fermacBody">Empresa de representação comercial especializada em materiais industriais. Construída a partir do relacionamento direto com clientes, com foco em pipeline comercial e relações de longo prazo.</div>
+                </div>
+                <div class="card">
+                    <div class="card__icon"><i class="fas fa-handshake"></i></div>
+                    <div class="card__subtitle" data-i18n="index.steelSubtitle">Gestão Comercial</div>
+                    <div class="card__title" data-i18n="index.steelTitle">Setor do Aço — 20+ Anos</div>
+                    <div class="card__body" data-i18n="index.steelBody">Negociei fornecimentos e desenvolvi relacionamentos comerciais com mais de 1.000 empresas no Sul do Brasil, representando distribuidoras como PANA, JATI e BOLD.</div>
+                </div>
+                <div class="card">
+                    <div class="card__icon"><i class="fas fa-cogs"></i></div>
+                    <div class="card__subtitle" data-i18n="index.focusSubtitle">Foco Atual</div>
+                    <div class="card__title" data-i18n="index.focusTitle">Sistemas Full-Stack & Inteligência de Dados</div>
+                    <div class="card__body" data-i18n="index.focusBody">Construindo e testando ferramentas práticas em torno de CRM, relatórios de fornecedores, histórico de e-mails, automação e sinais comerciais. A meta não é substituir o julgamento de negócio, mas apoiá-lo com sistemas mais claros.</div>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top: var(--space-2xl);">
+                <a href="experience.html" class="btn-outline"><span data-i18n="index.careerBtn">Experiência Completa</span> <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
 
-			<div class="acad_grid">
+    <!-- Education teaser -->
+    <section class="section">
+        <div class="section__container">
+            <div class="prose-grid">
+                <div class="prose-grid__visual" style="order: -1;">
+                    <div class="degree-card">
+                        <div class="degree-card__school">University of London</div>
+                        <div class="degree-card__credential">Diploma of Higher Education in Computer Science</div>
+                        <div class="degree-card__date"><i class="fas fa-calendar-alt"></i> <span data-i18n="index.eduDegreeDate">Abril 2019 – Março 2025</span></div>
+                        <div class="degree-card__body" data-i18n="index.eduDegreeBody">240 créditos do programa BSc Computer Science (Levels 4–5), oferecido via Coursera por Goldsmiths. O currículo cobre OOP, bancos de dados, estruturas de dados, arquitetura de sistemas e engenharia de software.</div>
+                        <div class="skills-list" style="margin-top: var(--space-lg);">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">P5.js</span>
+                            <span class="skill-tag">OOP</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="prose-grid__text">
+                    <span class="eyebrow" data-i18n="index.eduEyebrow">Formação</span>
+                    <h2 data-i18n="index.eduTitle">Fundamentos de Computação, Conquistados na Prática</h2>
+                    <p data-i18n="index.eduP1">
+                        O programa da University of London me deu a base rigorosa para ir além da sintaxe e entender sistemas. Somado às certificações da HarvardX e Microsoft Learn, e à formação anterior em Processos Gerenciais pela UniFtec, meu trabalho fica na interseção entre julgamento de negócio e profundidade técnica.
+                    </p>
+                    <p data-i18n="index.eduP2">Certificações complementares em ciência de dados, machine learning, SQL, Power BI e R pela HarvardX e Microsoft.</p>
+                    <a href="education.html" class="btn-outline"><span data-i18n="index.eduBtn">Formação Completa</span> <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<!-- First University Card -->
-				<div class="card">
+    <!-- Skills strip -->
+    <section class="section section--steel">
+        <div class="section__container">
+            <div class="section__header">
+                <span class="eyebrow" data-i18n="index.skillsEyebrow">Capacidades</span>
+                <h2 class="section-title" data-i18n="index.skillsTitle">Linguagens, Ferramentas & Técnicas</h2>
+                <p class="section-subtitle" data-i18n="index.skillsSubtitle">Ferramentas são úteis quando servem a um problema operacional. Estas são as linguagens, sistemas e métodos que uso ou estudo para conectar realidade comercial com execução técnica.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-xl);">
+                <div>
+                    <h4 style="margin-bottom: var(--space-sm); color: var(--accent);" data-i18n="index.skillsBizTitle">Sistemas de Negócio</h4>
+                    <div class="skills-list">
+                        <span class="skill-tag" data-i18n="index.skillsBizCrm">Desenho de CRM</span>
+                        <span class="skill-tag" data-i18n="index.skillsBizPipeline">Mapeamento de Pipeline</span>
+                        <span class="skill-tag" data-i18n="index.skillsBizFollowup">Fluxos de Follow-up</span>
+                        <span class="skill-tag" data-i18n="index.skillsBizSignals">Sinais Comerciais</span>
+                        <span class="skill-tag" data-i18n="index.skillsBizDocs">Documentação de Processos</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: var(--space-sm); color: var(--accent);">Software</h4>
+                    <div class="skills-list">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Docker</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: var(--space-sm); color: var(--accent);" data-i18n="index.skillsDataTitle">Dados</h4>
+                    <div class="skills-list">
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag" data-i18n="index.skillsDataStats">Estatística</span>
+                        <span class="skill-tag" data-i18n="index.skillsDataParsing">Parsing de Relatórios</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: var(--space-sm); color: var(--accent);" data-i18n="index.skillsFoundTitle">Fundamentos</h4>
+                    <div class="skills-list">
+                        <span class="skill-tag" data-i18n="index.skillsFoundAlgo">Algoritmos</span>
+                        <span class="skill-tag" data-i18n="index.skillsFoundDb">Bancos de Dados</span>
+                        <span class="skill-tag" data-i18n="index.skillsFoundLogic">Lógica Digital</span>
+                        <span class="skill-tag" data-i18n="index.skillsFoundArch">Arquitetura de Computadores</span>
+                        <span class="skill-tag" data-i18n="index.skillsFoundEng">Engenharia de Software</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: var(--space-sm); color: var(--accent);" data-i18n="index.skillsCommTitle">Comunicação</h4>
+                    <div class="skills-list">
+                        <span class="skill-tag" data-i18n="index.skillsCommPt">Português</span>
+                        <span class="skill-tag" data-i18n="index.skillsCommEn">Inglês</span>
+                        <span class="skill-tag" data-i18n="index.skillsCommEs">Espanhol</span>
+                        <span class="skill-tag" data-i18n="index.skillsCommB2b">Negociação B2B</span>
+                        <span class="skill-tag" data-i18n="index.skillsCommWriting">Escrita Técnica</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-					<h3>University of London</h3>
-					
-					<span class="fa fa-calendar"> April 2019 - March 2025</span>												
-					<div class="cardinfo">
-						
-						<h3><strong>Diploma of Higher Education in Computer Science </strong></h3>
-								<span class="cardinfo">
-									This qualification represents the successful completion of 240 credits from the University of London’s BSc Computer Science program (Levels 4 and 5), delivered online through Coursera and directed by Goldsmiths, University of London.<br><br>
-    								The curriculum emphasized hands-on programming using languages such as P5.js, C++, Python, and SQL, along with strong foundations in databases, web development, systems architecture and data science. <br><br>
-    								Key academic topics included Object-Oriented Programming (OOP), software design principles, data structures, algorithmic thinking, and the mathematical foundations essential to computer science reasoning.
-								</span><br>
-								<span class="fa fa-map-marker">   Online – University of London (Coursera platform)</span>
+    <!-- Knowledge base direction -->
+    <section class="section">
+        <div class="section__container">
+            <div class="prose-grid">
+                <div class="prose-grid__text">
+                    <span class="eyebrow" data-i18n="index.kbEyebrow">Sistema de Conhecimento</span>
+                    <h2 data-i18n="index.kbTitle">Aprendizado Público, Operação Privada</h2>
+                    <p data-i18n="index.kbP1">
+                        Estou construindo um sistema de conhecimento em duas camadas. A camada pública deve compartilhar notas selecionadas, estudos de caso e artefatos de aprendizado que ajudem a explicar como penso e trabalho. A camada privada permanece operacional: contexto de clientes, histórico comercial, playbooks internos e inteligência específica do negócio continuam protegidos.
+                    </p>
+                    <p data-i18n="index.kbP2">
+                        A meta não é publicar tudo. É transformar trabalho real em conhecimento útil e revisado, mantendo informações sensíveis fora do espaço público.
+                    </p>
+                </div>
+                <div class="prose-grid__visual">
+                    <div class="degree-card">
+                        <div class="degree-card__school" data-i18n="index.kbCardSchool">Regra de Fronteira</div>
+                        <div class="degree-card__credential" data-i18n="index.kbCardCredential">Compartilhar raciocínio, não dados privados brutos.</div>
+                        <div class="degree-card__body" data-i18n="index.kbCardBody">A escrita pública pode mostrar princípios, arquitetura, aprendizados e exemplos anonimizados. Sistemas privados mantêm nomes de clientes, detalhes comerciais, documentos e registros operacionais fora do espaço público.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-					</div>
-				</div>
+    <!-- CTA -->
+    <section class="cta-section">
+        <div>
+            <h2 class="cta-section__title" data-i18n="index.ctaTitle">Vamos Conversar</h2>
+            <p class="cta-section__sub" data-i18n="index.ctaSub">Se você está pensando em como dados, sistemas e tecnologia podem transformar operações, essa conversa me interessa.</p>
+            <div class="btn-actions">
+                <a href="contact.html" class="btn-primary"><span data-i18n="index.ctaBtnContact">Entrar em Contato</span> <i class="fas fa-arrow-right"></i></a>
+                <a href="https://www.linkedin.com/in/tailor-maciel/" target="_blank" rel="noopener noreferrer" class="btn-secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </section>
 
-				<!-- Second University Card -->						
-				<div class="card">
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__grid">
+            <div>
+                <div class="footer__brand-name">TM</div>
+                <p class="footer__tagline" data-i18n-html="footer.tagline">Inteligência comercial, sistemas e operações B2B.<br>Caxias do Sul, Rio Grande do Sul, Brasil.</p>
+                <div class="footer__social">
+                    <a href="mailto:hello@tailormaciel.com" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/tailor-maciel/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/taimac" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer__col-title" data-i18n="footer.navTitle">Navegação</h4>
+                <ul class="footer__links">
+                    <li><a href="about.html" data-i18n="nav.about">Sobre</a></li>
+                    <li><a href="experience.html" data-i18n="nav.experience">Experiência</a></li>
+                    <li><a href="education.html" data-i18n="nav.education">Formação</a></li>
+                    <li><a href="contact.html" data-i18n="nav.contact">Contato</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer__col-title" data-i18n="footer.specialtiesTitle">Especialidades</h4>
+                <ul class="footer__links">
+                    <li><a href="#" data-i18n="footer.specB2b">Estratégia Comercial B2B</a></li>
+                    <li><a href="#" data-i18n="footer.specData">Análise de Dados</a></li>
+                    <li><a href="#" data-i18n="footer.specAutomation">Automação de Processos</a></li>
+                    <li><a href="#" data-i18n="footer.specSystems">Desenvolvimento de Sistemas</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <span class="footer__copy">&copy; 2026 Tailor Maciel. <span data-i18n="footer.copyIndex">Projetado e construído com intenção.</span></span>
+            <span class="footer__copy">PT · EN · ES</span>
+        </div>
+    </footer>
 
-					<h3>Uniftec Group - University Centre </h3>
-									
-					<span class="fa fa-calendar">
-						Aug 2012 -
-						Jun 2016</span>				
-				
-					<div class="cardinfo">
-						
-							<h3><strong>Degree - Management Processes </strong></h3>
-							<span class="hidden-phone">
-								Education was mainly based on management tools for manufacturing and productive organizational processes, 
-								with a focus on project management tools associated with systemic thinking and marketing. <br>
-								I learned the importance of human relationships and communication in business routines. </span><br>
-								<span class="fa fa-map-marker">  Caxias do Sul - RS Brazil</span>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- 2 column grid for academic background END-->
-
-		<!-- 3 column grid for Courses and Trainings START -->
-		<section class="edu">
-			<h2>Courses and Trainings </h2>
-				<!-- CARD START -->
-				<div class="cards_grid">
-					<!-- CARD START -->
-					<div class="card">
-						<a target="_blank" href="https://coursera.org/share/1782f12eb40bfa95cdd656651c6fe618">
-							<img src="images/certificates/googleIT.png"  alt="Probability Certificate">
-						</a>
-						
-						<div class="card_body">
-							<h3>Google IT Support</h3>												
-							<div class="cardinfo">
-								<span >Operating Systems and You: Becoming a Power User. <br>
-									The Bits and Bytes of Computer Networking. <br>
-									IT Security: Defense against the digital dark arts. <br>
-									System Administration and IT Infrastructure Services. <br>
-									Technical Support Fundamentals
-								</span>
-							</div>
-							
-						</div>
-					</div>
-					<!-- CARD END -->
-					<!-- CARD START -->
-					<div class="card">
-						<a target="_blank" href="https://courses.edx.org/certificates/81dd63c49e9b44abb155b52a023e1101">
-							<img src="images/certificates/11DS_Probal_Nov_18.png"  alt="Probability Certificate">
-						</a>
-						
-						<div class="card_body">
-							<h3>Data Science: Probability</h3>												
-							<div class="cardinfo">
-								<span >Probability theory is the mathematical foundation of statistical inference which is 
-									indispensable for analyzing data affected by chance, and thus essential for data scientists.
-								</span>
-							</div>
-							
-						</div>
-					</div>
-					<!-- CARD END -->
-				
-					<!-- CARD START -->
-					<div class="card">
-						<a target="_blank" href="https://courses.edx.org/certificates/5a0ed39c971348c0a505193eaadd4654">
-							<img src="images/certificates/10DS_Inf_Model_Nov_18.png" alt="Inference and Modeling">
-						</a>
-						<div class="card_body">
-							<h3>Data Science: Inference and Modeling</h3>												
-							<div class="cardinfo">
-								<span>How to define estimates and margins of errors of populations, parameters, and standard errors 
-									in order to make predictions about data.<br>
-									How to use models to aggregate data from different sources.
-									How to apply the very basics of Bayesian statistics and predictive modeling.
-								</span>
-							</div>
-						</div>
-					</div>
-					<!-- CARD END -->
-
-					<!-- CARD START -->
-					<div class="card">
-						<a target="_blank" href="https://courses.edx.org/certificates/bf8e2858c3b74a328fa1829e975ccc30">
-							<img src="images/certificates/12DS_ProdTools_Nov_18.png" alt="Productive Tools">
-						</a>
-						<div class="card_body">
-							<h3>Data Science: Productive Tools</h3>												
-							<div class="cardinfo">
-								<span> How to use Unix/Linux as a tool for managing files and directories and how to keep the file system organized. 
-									How to use the version control system git, a powerful tool for keeping track of changes in your scripts and reports.<br>
-									How to write reports in R markdown which permits you to incorporate text and code into a document.
-								</span>
-							</div>
-						</div>
-					</div>
-					<!-- CARD END -->
-
-					<!-- CARD START -->
-					<div class="card">
-						<a target="_blank" href="https://courses.edx.org/certificates/48750dfddbd346c690dfbb510f18c6f7">
-							<img src="images/certificates/9DS_Vis_Sept_18.png" alt="Data Science Visualization">
-						</a>
-						<div class="card_body">
-							<h3>Data Science: Visualization</h3>												
-							<div class="cardinfo">
-								<span> Data visualization principles to better communicate data-driven findings
-									How to use ggplot2 to create custom plots. 
-									The weaknesses of several widely used plots and why you should avoid them
-								</span>
-							</div>
-						</div>
-					</div>
-					<!-- CARD END -->
-
-					<!-- CARD START -->
-					<div class="card">
-						<a target="_blank" href="https://courses.edx.org/certificates/5456a2b35fb7435989a40d0cef0cecbd">
-							<img src="images/certificates/8DS_RBasics_Aug_18.png" alt="R Basics">
-						</a>
-						<div class="card_body">
-							<h3>Data Science: R Basics</h3>												
-							<div class="cardinfo">
-								<span> How to read, extract, and create datasets in R.
-										How to perform a variety of operations and analyses on datasets using R.
-										How to write your own functions/sub-routines in R.
-								</span>
-							</div>
-						</div>
-					</div>
-					<!-- CARD END -->
-
-					<!-- CARD START -->
-					<div class="card">
-						<a target="_blank" href="https://courses.edx.org/certificates/d01c2f2a31204d6a83087d62ce1ccbbd">
-							<img src="images/certificates/6DS_Essentials_Dez_17.png" alt="Data Science Essentials">
-						</a>
-						<div class="card_body">
-							<h3>Data Science: Essentials</h3>												
-							<div class="cardinfo">
-								<span> How to build predictive analytics solutions with Azure Machine Learning.
-								</span>
-							</div>
-						</div>
-					</div>
-					<!-- CARD END -->
-
-					<!-- CARD START -->
-					<div class="card">
-						<a target="_blank" href="https://courses.edx.org/certificates/853998290d7545cfa6f16cbc9e22ba47">
-							<img src="images/certificates/7DS_PrinciplesML_Dez_17.png" alt="Data Science Principles of Machine Learning">
-						</a>
-						<div class="card_body">
-							<h3>Data Science: Principles of Machine Learning</h3>												
-							<div class="cardinfo">
-								<span> Introduction to Classification, Loss Functions for Classification, Statistical Learning Theory for Supervised Learning,
-									Logistic Regression, Maximum Likelihood Perspective, Evaluation Methods for Classifiers, ROC Curve Algorithm,
-									Exploring Data for Classification, Multiple Linear Regression, Outliers, Improving Models, Regularization, Decision Trees, Boosting,
-									Introduction to Neural Networks, Backpropagation, Support Vector Machines (SVMs), K-Means Clustering.
-								</span>
-							</div>
-						</div>
-					</div>
-					<!-- CARD END -->
-
-					<!-- CARD START -->
-					<div class="card">
-						<a target="_blank" href="https://courses.edx.org/certificates/ca287020273d4c379fefa206ce3322ef">
-							<img src="images/certificates/2DS_EssentialsStatistics_Jun_17.png" alt="Essential Statistics for Data Analysis">
-						</a>
-						<div class="card_body">
-							<h3>Data Science: Essential Statistics for Data Analysis</h3>												
-							<div class="cardinfo">
-								<span> Descriptive Statistics, Basic Probability, Random Variables, Sampling and Confidence Intervals, Hypothesis Testing
-								</span>
-							</div>
-						</div>
-					</div>
-					<!-- CARD END -->
-
-					<!-- CARD START -->
-					<div class="card">
-						<a target="_blank" href="https://courses.edx.org/certificates/17f2f9f5bf9045709c25c66a3cb01fe7">
-							<img src="images/certificates/4DS_PBI_Set_17.png" alt="Analyzing and Visualizing Data with Power BI">
-						</a>
-						
-						<div class="card_body">
-							<h3>Data Science: Analyzing and Visualizing Data with Power BI</h3>												
-							<div class="cardinfo">
-								<span> Understanding key concepts in business intelligence, data analysis, and data visualization, Visualizing your data and authoring reports,
-									Creating dashboards based on reports and natural language queries, Sharing dashboards effectively based on the organization’s needs,
-									Connecting directly to SQL Azure, HD Spark, and SQL Server Analysis Services.
-
-
-								</span>
-							</div>
-							
-						</div>
-					</div>
-					<!-- CARD END -->
-
-					<!-- CARD START -->
-					<div class="card">
-						<a target="_blank" href="https://courses.edx.org/certificates/0d7247890a8540c0bce82f693d317e4e">
-							<img src="images/certificates/3DS_Intro_R_Set_17.png" alt="Introduction to R for Data Science">
-						</a>
-						<div class="card_body">
-							<h3>Data Science: Introduction to R for Data Science</h3>												
-							<div class="cardinfo">
-								<span> Vectors, Matrices, Factors, Lists, Data Frames, Basic Graphics.
-								</span>
-							</div>
-							
-						</div>
-					</div>
-					<!-- CARD END -->
-
-					<!-- CARD START -->
-					<div class="card">
-						<a target="_blank" href="https://courses.edx.org/certificates/1b94fc82cbaf427ebf4f09096cfacc50">
-							<img src="images/certificates/5DS_SQL_Sept_17.png" alt="Querying with Transact-SQL">
-						</a>
-						<div class="card_body">
-							<h3>Data Science: Querying with Transact-SQL</h3>												
-							<div class="cardinfo">
-								<span> Querying Tables with SELECT, Querying Multiple Tables with Joins, Using Set Operators, Using Functions and Aggregating Data,
-									Using Subqueries and APPLY, Using Table Expressions, Grouping Sets and Pivoting Data, Modifying Data, Programming with Transact-SQL,
-									Error Handling and Transactions, 
-
-								</span>
-							</div>
-							
-						</div>
-					</div>
-					<!-- CARD END -->
-
-					<!-- CARD START -->
-					<div class="card">
-						<a target="_blank" href="https://courses.edx.org/certificates/c9b28781405046a89ff162c36d06a48d">
-							<img src="images/certificates/1DS_Orientation_Jan_17.png" alt="Data Science Orientation">
-						</a>
-						
-						<div class="card_body">
-							<h3>Data Science Orientation</h3>												
-							<div class="cardinfo">
-								<span> An overview of The Data Science Curriculum, Data Science Fundamentals and Getting Started with Data.
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- CARD END -->
-		</section>
-		<!-- 3 column grid for Courses and Trainings END -->	
-
-		<!-- CAREER GUIDANCE SECTION START -->
-		<section id="guidanceID" class="guidance">
-			<div class="flex-container">
- 				
-				<!--VERTICAL LEFT SIDE BANNER START
-				<div class="left-banner">
-					<div class="image">
-						<img src="images/cards/birds.jpg" width="100" height="100" alt="Business Plan" >
-					</div>
-				</div> -->
-				<!--  VERTICAL LEFT SIDE BANNER END-->
-
-				<article class="cardinfo">
-					<h2> My Career Path</h2>
-					<p><strong>
-    					I began my professional journey at the age of fourteen as a salesman. This early experience helped me develop strong communication skills and, more importantly, taught me the value of listening—especially to those with more experience. It made me realize that good advice can help us avoid many unproductive paths.<br>
-
-    					Over time, I learned that the most sustainable results—and the strongest relationships—come from embracing a win-win mindset.<br>
-
-    					In 2016, after earning a degree in Management Processes (Tecnólogo em Processos Gerenciais), I decided to pursue Data Science, inspired by the profound changes taking place in the job market and in how businesses operate.<br>
-
-    					Since then, I have earned certifications from Google, HarvardX, and Microsoft in areas such as IT, data analysis, and machine learning. These experiences made it clear that to truly apply this knowledge effectively, I needed a deeper foundation—leading me to immerse myself in Computer Science.<br>
-
-   						My goal is to simplify business processes, making them more agile and less bureaucratic, so that people can focus their time and energy on what is truly meaningful and productive.
-					</strong></p>
-
-				</article>
-				<!--  MAIN CONTENT ARTICLE END-->
-			</div>
-		</section>
-		<!-- CAREER GUIDANCE SECTION END -->
-	</main>
-
-    <!-- FOOTER START -->
-	<footer id="footerID" class="footer">
-		<div class="footer-feature">
-			<h3>Say Hello.</h3>
-			<a target="_blank" href="mailto:hello@tailormaciel.com">hello@tailormaciel.com</a>
-			<ul class="socials">
-				<li><a target="_blank" href="https://twitter.com/TailorMaciel"><i class="fa fa-twitter"></i></a></li>
-				<li><a target="_blank" href="https://www.linkedin.com/in/tailor-maciel/"><i class="fa fa-linkedin-square"></i></a></li>
-			</ul>
-			<div class="footer-bottom">
-				<p>copyright &copy;2022 Tailor Maciel. Designed by <span>Tailor Maciel</span> </p>
-			</div>
-		
-		</div>
-		
-		
-	</footer>
-	<!-- FOOTER END -->
-
-	<!--A SCRIPT FOR RENDERING A MENU ON MOBILE VERSION--->
-	<!--All code references are in the reference section and are commented on in the report.-->
-	<script src="script/burger.js"></script>
-		
+    <script src="translations/strings.js"></script>
+    <script src="scripts/siteController.js"></script>
 </body>
 </html>
