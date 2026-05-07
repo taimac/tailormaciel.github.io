@@ -85,17 +85,18 @@ class LanguageSwitcherController {
         this.btn = document.getElementById('langToggle');
         if (!this.btn || typeof TM_TRANSLATIONS === 'undefined') return;
 
-        const saved = localStorage.getItem(storageKey);
+        this.isLocalDev = ['127.0.0.1', 'localhost'].includes(window.location.hostname);
+        const saved = this.isLocalDev ? null : localStorage.getItem(storageKey);
         const lang = saved || defaultLang;
         if (lang !== defaultLang) this._apply(lang);
         this._updateBtn(lang);
 
         this.btn.addEventListener('click', () => {
-            const current = localStorage.getItem(this.storageKey) || this.defaultLang;
+            const current = this.btn.textContent === 'PT' ? 'en' : 'pt';
             const next = current === 'pt' ? 'en' : 'pt';
             this._apply(next);
             this._updateBtn(next);
-            localStorage.setItem(this.storageKey, next);
+            if (!this.isLocalDev) localStorage.setItem(this.storageKey, next);
         });
     }
 
@@ -147,11 +148,75 @@ class LanguageSwitcherController {
     }
 }
 
+class DevAutoRefreshController {
+    constructor(intervalMs = 1200) {
+        this.intervalMs = intervalMs;
+        this.isLocalDev = ['127.0.0.1', 'localhost'].includes(window.location.hostname);
+        this.fingerprint = null;
+        if (!this.isLocalDev) return;
+        this._start();
+    }
+
+    async _start() {
+        this.urls = this._collectUrls();
+        this.fingerprint = await this._fingerprint();
+        window.setInterval(async () => {
+            const next = await this._fingerprint();
+            if (this.fingerprint && next && next !== this.fingerprint) window.location.reload();
+            if (next) this.fingerprint = next;
+        }, this.intervalMs);
+    }
+
+    _collectUrls() {
+        const urls = new Set([
+            window.location.pathname || '/index.html',
+            '/translations/strings.js',
+            '/scripts/siteController.js',
+            '/styles/base/reset.css',
+            '/styles/base/typography.css',
+            '/styles/base/variables.css',
+            '/styles/components/buttons.css',
+            '/styles/components/card.css',
+            '/styles/components/footer.css',
+            '/styles/components/hero.css',
+            '/styles/components/navbar.css',
+            '/styles/components/sections.css',
+            '/styles/pages/main.css',
+            '/styles/responsive/breakpoints.css',
+            '/styles/utils/animation.css',
+            '/styles/utils/layout.css',
+        ]);
+
+        document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+            if (link.href) urls.add(new URL(link.href).pathname);
+        });
+
+        return Array.from(urls);
+    }
+
+    async _fingerprint() {
+        const parts = await Promise.all(this.urls.map(async url => {
+            try {
+                const res = await fetch(`${url}?dev-check=${Date.now()}`, {
+                    method: 'HEAD',
+                    cache: 'no-store',
+                });
+                return `${url}:${res.headers.get('last-modified') || ''}:${res.headers.get('etag') || ''}`;
+            } catch (_err) {
+                return `${url}:unavailable`;
+            }
+        }));
+
+        return parts.join('|');
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     new NavbarController();
     new MobileMenuController();
     new SmoothScrollController();
     new LanguageSwitcherController();
+    new DevAutoRefreshController();
     new AnimationController([
         '.stat-item',
         '.card',

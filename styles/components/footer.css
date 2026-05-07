@@ -94,9 +94,41 @@
     color: rgba(255,255,255,.35);
 }
 
-@media (max-width: 768px) {
-    .footer__grid { grid-template-columns: 1fr 1fr; }
-    .footer__grid > *:first-child { grid-column: 1 / -1; }
+@media (max-width: 900px) {
+    .footer {
+        padding: var(--space-3xl) var(--space-lg) var(--space-xl);
+    }
+
+    .footer__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+        text-align: center;
+    }
+
+    .footer__brand-name,
+    .footer__tagline,
+    .footer__col-title {
+        text-align: center;
+    }
+
+    .footer__tagline {
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer__social {
+        justify-content: center;
+    }
+
+    .footer__links {
+        align-items: center;
+    }
+
+    .footer__bottom {
+        justify-content: center;
+        text-align: center;
+    }
 }
 
 @media (max-width: 480px) {

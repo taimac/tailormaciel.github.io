@@ -4,7 +4,7 @@
     .section { padding: var(--space-3xl) var(--space-xl); }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .section { padding: var(--space-2xl) var(--space-lg); }
     .section__header { margin-bottom: var(--space-2xl); }
     h1 { font-size: var(--text-3xl); }

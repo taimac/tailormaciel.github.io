@@ -156,21 +156,101 @@
 }
 
 @media (max-width: 900px) {
+    .hero {
+        min-height: auto;
+        padding-top: 64px;
+    }
+
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
-        padding-top: var(--space-2xl);
+        justify-items: center;
+        padding: var(--space-2xl) var(--space-lg) var(--space-3xl);
+        gap: var(--space-xl);
+        overflow: hidden;
     }
+
+    .hero-content {
+        width: min(100%, 300px);
+        max-width: 300px;
+    }
+
+    .hero-greeting {
+        max-width: 100%;
+        justify-content: center;
+    }
+
+    .hero-greeting span {
+        font-size: 0.7rem;
+        letter-spacing: 0.045em;
+        white-space: normal;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 8.5vw, 2.35rem);
+        max-width: 300px;
+        white-space: normal;
+        overflow-wrap: normal;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1.05rem, 4.8vw, 1.28rem);
+        max-width: 300px;
+        overflow-wrap: normal;
+    }
+
+    .hero-description {
+        font-size: var(--text-base);
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .hero-actions { justify-content: center; }
+
     .hero-photo {
         order: -1;
         justify-content: center;
     }
+
     .hero-photo__frame {
-        width: min(280px, 72vw);
+        width: min(210px, 56vw);
+        box-shadow: 0 22px 54px rgba(0,0,0,.34), 0 0 0 8px rgba(15,159,143,.10);
+    }
+
+    .page-hero {
+        min-height: auto;
+        padding: calc(64px + var(--space-2xl)) var(--space-lg) var(--space-2xl);
+        text-align: center;
+    }
+
+    .page-hero__content {
+        width: min(100%, 300px);
+        max-width: 300px;
+    }
+
+    .page-hero__title {
+        font-size: clamp(1.9rem, 7.6vw, 2.25rem);
+        max-width: 300px;
+        overflow-wrap: normal;
+    }
+
+    .page-hero__subtitle {
+        font-size: var(--text-base);
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        overflow-wrap: anywhere;
     }
 }
 
 @media (max-width: 480px) {
-    .hero-photo { display: none; }
+    .hero-container {
+        padding-left: var(--space-md);
+        padding-right: var(--space-md);
+    }
+
+    .hero-photo__frame {
+        width: min(200px, 54vw);
+    }
 }

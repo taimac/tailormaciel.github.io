@@ -26,6 +26,16 @@ images/             Photos, logos, certificates
 
 Portuguese (primary) · English toggle available on every page.
 
+## Local Preview
+
+Use the no-cache preview server while editing:
+
+```bash
+python3 dev_server.py
+```
+
+Open `http://127.0.0.1:8002/`. Local preview keeps Portuguese as the default source and polls HTML, CSS, JS, and translation files for changes.
+
 ## Licence
 
 © 2026 Tailor Maciel. All rights reserved.

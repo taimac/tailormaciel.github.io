@@ -54,6 +54,8 @@ body {
     
     /* Enable hardware acceleration for smoother rendering */
     -webkit-font-smoothing: antialiased;
+
+    overflow-x: hidden;
 }
 
 /* ===== MEDIA ELEMENTS RESET ===== */
