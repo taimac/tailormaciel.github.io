@@ -12,10 +12,16 @@ class NavbarController {
     }
 
     _setActiveLink() {
-        const current = window.location.pathname.split('/').pop() || 'index.html';
+        const normalize = pathname => pathname.endsWith('/') ? pathname + 'index.html' : pathname;
+        const current = normalize(window.location.pathname);
         this.navbar.querySelectorAll('.nav-links a').forEach(link => {
             const href = link.getAttribute('href') || '';
-            if (href && href.includes(current)) link.classList.add('active');
+            let active = false;
+            if (href) {
+                try { active = normalize(new URL(href, window.location.href).pathname) === current; }
+                catch (_error) { active = false; }
+            }
+            link.classList.toggle('active', active);
         });
     }
 }

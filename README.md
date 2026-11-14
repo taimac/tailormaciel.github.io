@@ -39,3 +39,20 @@ Open `http://127.0.0.1:8002/`. Local preview keeps Portuguese as the default sou
 ## Licence
 
 © 2026 Tailor Maciel. All rights reserved.
+
+## Artigos (Portuguese)
+
+`artigos/index.html` lists approved articles. Prepare a public article Markdown
+with `status: draft` or `approved`, `approved: true`, `brand: personal`,
+`format: article`, `slug`, `title` and `description`; then run:
+
+```sh
+node scripts/renderArticle.js article.md
+node --test scripts/renderArticle.test.js
+```
+
+The input is publishable prose, not an entire private Editorial note. Existing
+slugs are refused. A new article and the regenerated index enter a reviewed PR
+to publishing `main`; repository-default `dev` is not the Pages source. Nothing
+in the renderer commits, pushes, merges or publishes. Articles are Portuguese;
+no automatic translation is performed.
