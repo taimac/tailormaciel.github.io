@@ -30,7 +30,7 @@ function parse(text) {
   meta[pair[1]]=value;
  }
  if(meta.approved!=='true' || meta.brand!=='personal' || meta.format!=='article' || !['draft','approved'].includes(meta.status)) throw Error('approved personal article required');
- if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(meta.slug) || meta.slug==='index') throw Error('invalid slug');
+ if(typeof meta.slug!=='string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(meta.slug) || meta.slug==='index') throw Error('invalid slug');
  if(!meta.title?.trim() || !meta.description?.trim()) throw Error('title and description required');
  return {meta,body:text.slice(m[0].length)};
 }

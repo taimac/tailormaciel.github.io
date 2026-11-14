@@ -8,3 +8,13 @@ test('rejects duplicate fields',()=>assert.throws(()=>parse(sample.replace('appr
 test('index enumerates generated pages deterministically',()=>{const d=fs.mkdtempSync(path.join(os.tmpdir(),'personal-test-'));try{fs.writeFileSync(path.join(d,'sistemas.html'),render(sample));assert.equal(buildIndex(d),buildIndex(d));assert.match(buildIndex(d),/href="sistemas.html"/);assert.match(buildIndex(d),/Construir sistemas/);}finally{fs.rmSync(d,{recursive:true});}});
 
 test('public HTTPS references are links; unsafe schemes remain text',()=>{const s=render(sample+'\n[Fonte](https://example.org/source) [Ataque](javascript:alert)');assert.match(s, /href="https:\/\/example.org\/source"/);assert.ok(!s.includes('href="javascript:'));});
+
+test('missing required slug is refused rather than coerced to undefined',()=>assert.throws(()=>render(sample.replace('slug: sistemas\n',''))));
+test('navbar compares resolved paths across root and nested indexes',()=>{
+ const vm=require('node:vm'),code=fs.readFileSync(path.join(__dirname,'siteController.js'),'utf8');
+ for(const [pathname,hrefs,expected] of [['/',['index.html','about.html','artigos/index.html'],[true,false,false]],['/index.html',['index.html','artigos/index.html'],[true,false]],['/about.html',['index.html','about.html','artigos/index.html'],[false,true,false]],['/artigos/',['../index.html','index.html'],[false,true]],['/artigos/index.html',['../index.html','index.html'],[false,true]]]){
+  const links=hrefs.map(h=>({getAttribute:()=>h,active:true,classList:{toggle(_name,value){this.target.active=value;}}}));for(const l of links)l.classList.target=l;
+  const context={URL,document:{getElementById:()=>({querySelectorAll:()=>links}),addEventListener:()=>{}},window:{location:{pathname,href:'https://tailormaciel.com'+pathname},addEventListener:()=>{}}};
+  vm.createContext(context);vm.runInContext(code+'\nnew NavbarController();',context);assert.deepEqual(links.map(x=>x.active),expected,pathname);
+ }
+});
