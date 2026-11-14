@@ -1,6 +1,17 @@
 const TM_TRANSLATIONS = {
     pt: {
+        articles: {
+            pageTitle: 'Artigos — Tailor Maciel',
+            skip: 'Ir para o conteúdo', eyebrow: 'Negócios · Tecnologia · Sistemas', title: 'Artigos',
+            intro: 'Reflexões sobre o que acontece quando experiência comercial encontra tecnologia — e vira conhecimento compartilhado.',
+            emptyEyebrow: 'Um espaço em construção', emptyTitle: 'As próximas ideias estão em preparação.',
+            emptyText: 'Os artigos aparecerão aqui depois de revisados. Enquanto isso, conheça os projetos e experiências que dão origem a essa escrita.',
+            explore: 'Conhecer meu trabalho', collectionTitle: 'Para ler com calma', listAria: 'Artigos publicados',
+            countOne: 'artigo', countMany: 'artigos', type: 'Artigo', read: 'Ler artigo',
+            back: 'Todos os artigos', byline: 'Por Tailor Maciel', language: 'Artigo em português', continueAria: 'Continuar a leitura',
+        },
         nav: {
+            articles: 'Artigos',
             about: 'Sobre',
             experience: 'Experiência',
             education: 'Formação',
@@ -252,7 +263,18 @@ const TM_TRANSLATIONS = {
     },
 
     en: {
+        articles: {
+            pageTitle: 'Articles — Tailor Maciel',
+            skip: 'Skip to content', eyebrow: 'Business · Technology · Systems', title: 'Articles',
+            intro: 'Reflections on what happens when commercial experience meets technology — and becomes shared knowledge.',
+            emptyEyebrow: 'A space taking shape', emptyTitle: 'The next ideas are in the making.',
+            emptyText: 'Articles will appear here after review. Meanwhile, explore the projects and experiences behind the writing.',
+            explore: 'Explore my work', collectionTitle: 'Take a moment to read', listAria: 'Published articles',
+            countOne: 'article', countMany: 'articles', type: 'Article', read: 'Read article',
+            back: 'All articles', byline: 'By Tailor Maciel', language: 'Article in Portuguese', continueAria: 'Continue reading',
+        },
         nav: {
+            articles: 'Articles',
             about: 'About',
             experience: 'Experience',
             education: 'Education',
