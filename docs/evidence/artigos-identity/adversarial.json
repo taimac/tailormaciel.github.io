@@ -1,0 +1,17 @@
+[
+  {
+    "route": "artigos/",
+    "keyboard": "Tab→Enter focuses main; next Tab stays in content",
+    "clipping": "long Portuguese words and long URL wrap at 320px"
+  },
+  {
+    "route": "artigos/demonstracao-visual.html",
+    "keyboard": "Tab→Enter focuses main; next Tab stays in content",
+    "clipping": "long Portuguese words and long URL wrap at 320px"
+  },
+  {
+    "route": "_states/empty/artigos/",
+    "keyboard": "Tab→Enter focuses main; next Tab stays in content",
+    "clipping": "long Portuguese words and long URL wrap at 320px"
+  }
+]

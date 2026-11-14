@@ -67,3 +67,7 @@
  .article-hero .page-hero__title { font-size: 2rem; }
  .articles-collection__heading { align-items: baseline; }
 }
+
+/* Dynamic metadata must wrap even when the shared hero hides overflow. */
+.articles-page .article-hero__title, .articles-page .article-lead,
+.articles-page .article-card h2, .articles-page .article-card p { overflow-wrap: anywhere; }

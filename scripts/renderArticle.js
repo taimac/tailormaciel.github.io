@@ -63,12 +63,12 @@ function shell(title, description, content, canonical, index=false) {
 <body class="articles-page${index?' articles-index':' article-reading'}">
     <a class="article-skip" href="#conteudo" data-i18n="articles.skip">Ir para o conteúdo</a>
     ${nav}
-    <main id="conteudo">
+    <main id="conteudo" tabindex="-1">
 ${content}
     </main>
     ${footer}
     <script src="../translations/strings.js?v=20261114-articles"></script>
-    <script src="../scripts/siteController.js?v=20260507-mobile-pass"></script>
+    <script src="../scripts/siteController.js?v=20261114-articles-focus"></script>
 </body>
 </html>\n`;
 }

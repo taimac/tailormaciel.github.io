@@ -87,7 +87,32 @@ não é dependência do site. ENG-REVIEW-FINDINGS-01 será fechado com a revisã
   Assertions exigiu base/PRs verificados e separação entre publicado, proposto e ativado.
 
 Sem CI configurado no repositório: estes resultados são **evidência local**, não
-CI verde. A exceção anterior cobria somente #96 e Fermac #27; a disposição deste
-PR deve ser registrada separadamente. Merge, publicação e ativação do Hermes
+CI verde. O proprietário aceitou separadamente a evidência local **somente para #98**
+em 14/11/2026; a decisão está no PR e na issue #97. A exceção anterior continua
+limitada a #96 e Fermac #27. Merge, publicação e ativação do Hermes
 Editorial permanecem decisões distintas do proprietário. Não se deduz defeito
 visual no site da Fermac a partir desta correção pessoal.
+
+### Correções da Advisory Review
+
+Revisor independente: novo contexto Codex, revisão somente de leitura, modelo
+exato não exposto. Achados no head `74f8fcc`, registrados no PR:
+
+| Achado | Check / impacto | Correção e contraprova |
+|---|---|---|
+| P2: skip link interceptado pelo smooth scroll | ENG-TEST-BEHAVIOR-01 / acessibilidade por teclado | O controlador preserva o comportamento nativo de `.article-skip`; `main` tem `tabindex=-1`. Tab → Enter foca `main`, e o próximo Tab fica no conteúdo em índice vazio, populado e leitura. |
+| P2: palavras longas cortadas no hero mobile | ENG-TEST-REGRESSION-01 / conteúdo ilegível | `overflow-wrap:anywhere` em título, introdução e metadados dos cards. “Desinstitucionalização”, “Interdisciplinaridade” e URL longa cabem em 320 px; `scrollWidth` do elemento não supera `clientWidth`. |
+
+[Contraprovas de teclado e clipping](evidence/artigos-identity/adversarial.json).
+O revisor reproduziu os dois defeitos antes da correção. A seleção de checks foi
+ampliada para foco real e clipping por elemento: medir só a largura do documento
+não detecta texto escondido pelo `overflow:hidden` de um ancestral. Estes testes
+passam após a correção. O cache do controlador nas páginas geradas ganhou versão
+nova, para que o leitor não receba a implementação antiga. Nenhum outro
+comportamento de âncora foi alterado.
+
+Na segunda rodada, a seleção de lições foi reavaliada: Source-Ungrounded Assertions
+continua aplicável; a classe inclui os três estados de Artigos e os campos
+variáveis de título/introdução/cards. A comparação entre Advisory e Independent
+fica registrada no PR quando a revisão independente terminar. Sem mudança de
+escopo ou aceitação visual inferida.
