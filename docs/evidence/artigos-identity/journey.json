@@ -1,0 +1,26 @@
+{
+  "results": [
+    {
+      "device": "desktop",
+      "journey": "Home → Artigos → synthetic reading → Artigos → Home",
+      "menu": "full navbar visible",
+      "language": "PT→EN→PT; article remains PT"
+    },
+    {
+      "device": "mobile",
+      "journey": "Home → Artigos → synthetic reading → Artigos → Home",
+      "menu": "open and outside close passed",
+      "language": "PT→EN→PT; article remains PT"
+    }
+  ],
+  "widths": [
+    320,
+    768,
+    900,
+    1024,
+    1440
+  ],
+  "localLinks": "all 200",
+  "privatePaths": "404",
+  "pageErrors": []
+}
